@@ -62,6 +62,9 @@
       .mapcontainer {
         flex: 5 1 90%;
       }
+      [data-type="area"] {
+        stroke-width: 0.3;
+      }
 
       /* For all zoom buttons */
       .mapael .zoomButton {
@@ -145,7 +148,7 @@
             // Set default plots and areas style
             defaultPlot: {
               attrs: {
-                fill: "#004a9b",
+                fill: "#3B5716",
                 opacity: 0.6,
               },
               attrsHover: {
@@ -153,7 +156,7 @@
               },
               text: {
                 attrs: {
-                  fill: "#505444",
+                  fill: "#223805",
                 },
                 attrsHover: {
                   fill: "#000",
@@ -181,20 +184,14 @@
 
           // Customize some areas of the map
           areas: {
-            "department-56": {
-              text: { content: "Morbihan", attrs: { "font-size": 10 } },
-              tooltip: { content: "Morbihan (56)" },
-              href: "http://fr.wikipedia.org/wiki/Morbihan",
-            },
-            "department-21": {
-              attrs: {
-                fill: "#488402",
-              },
-              attrsHover: {
-                fill: "#a4e100",
-              },
+            "area-1": {
+              text: { content: "Morbihan", attrs: { "font-size": 6 } },
               href: "http://fr.wikipedia.org/wiki/C%C3%B4te-d%27Or",
               target: "_blank",
+              tooltip: {
+                content:
+                  '<span style="font-weight:bold;">District:</span> Obereem',
+              },
             },
           },
 
@@ -204,15 +201,15 @@
             paris: {
               type: "image",
               url: "/public/city-sm.png",
-              width: 12,
-              height: 40,
-              latitude: 48.86,
-              longitude: 2.3444,
+              width: 14,
+              height: 12,
+              latitude: 140,
+              longitude: 140,
               attrs: {
                 opacity: 1,
               },
               attrsHover: {
-                transform: "s1.5",
+                transform: "s1.2",
               },
               href: "http://fr.wikipedia.org/wiki/Paris",
               target: "_blank",
@@ -221,8 +218,8 @@
             lyon: {
               type: "circle",
               size: 50,
-              latitude: 45.758888888889,
-              longitude: 4.8413888888889,
+              latitude: 165.758888888889,
+              longitude: 200.8413888888889,
               value: 700000,
               tooltip: {
                 content: '<span style="font-weight:bold;">City :</span> Lyon',
@@ -234,8 +231,8 @@
             rennes: {
               type: "square",
               size: 20,
-              latitude: 48.114166666667,
-              longitude: -1.6808333333333,
+              latitude: 80,
+              longitude: 24,
               tooltip: {
                 content: '<span style="font-weight:bold;">City :</span> Rennes',
               },
@@ -249,7 +246,7 @@
               text: {
                 content: "My plot",
                 position: "bottom",
-                attrs: { "font-size": 10, fill: "#004a9b", opacity: 0.6 },
+                attrs: { "font-size": 6, fill: "#004a9b", opacity: 0.6 },
                 attrsHover: { fill: "#004a9b", opacity: 1 },
               },
             },
