@@ -18,7 +18,7 @@
       }
       body {
         color: #5d5d5d;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: "IM Fell English", Helvetica, Arial, sans-serif;
       }
 
       h1 {
@@ -136,6 +136,44 @@
 
     <script type="text/javascript">
       $(function () {
+        const factionData = {
+          picatun: {
+            name: "Picatun",
+            color: "#58A540",
+            colorHover: "#429229",
+          },
+          dormum: {
+            name: "Dormum",
+            color: "#DA5A4D",
+            colorHover: "#BF3729",
+          },
+          nelomica: {
+            name: "Nelomica",
+            color: "#6DAD98",
+            colorHover: "#459279",
+          },
+          morajiin: {
+            name: "Morajiin",
+            color: "#7A66BB",
+            colorHover: "#634DA9",
+          },
+          ridokin: {
+            name: "Ridokin",
+            color: "#C35BB6",
+            colorHover: "#AC399E",
+          },
+          dwarves: {
+            name: "Dwarves",
+            color: "#7C7968",
+            colorHover: "#444238",
+          },
+          kairn: {
+            name: "Kairn",
+            color: "#7C74C2",
+            colorHover: "#5950A8",
+          },
+        };
+
         $(".mapcontainer").mapael({
           map: {
             name: "terra_novus",
@@ -157,6 +195,8 @@
               text: {
                 attrs: {
                   fill: "#223805",
+                  "font-family":
+                    "'IM Fell English', Helvetica, Arial, sans-serif",
                 },
                 attrsHover: {
                   fill: "#000",
@@ -173,7 +213,9 @@
               },
               text: {
                 attrs: {
-                  fill: "#505444",
+                  fill: "#373836",
+                  "font-family":
+                    "'IM Fell English', Helvetica, Arial, sans-serif",
                 },
                 attrsHover: {
                   fill: "#000",
@@ -185,12 +227,338 @@
           // Customize some areas of the map
           areas: {
             "area-1": {
-              text: { content: "Morbihan", attrs: { "font-size": 6 } },
+              text: {
+                content: "Obereem",
+                attrs: { "font-size": 6 },
+                margin: { x: 8, y: 0 },
+              },
+              attrs: {
+                fill: factionData.morajiin.color,
+                stroke: factionData.morajiin.colorHover,
+              },
+              attrsHover: {
+                fill: factionData.morajiin.colorHover,
+              },
               href: "http://fr.wikipedia.org/wiki/C%C3%B4te-d%27Or",
               target: "_blank",
               tooltip: {
                 content:
                   '<span style="font-weight:bold;">District:</span> Obereem',
+              },
+            },
+            "area-2": {
+              text: { content: "area-2", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-3": {
+              text: { content: "area-3", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-4": {
+              text: { content: "area-4", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-5": {
+              text: { content: "area-5", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-6": {
+              text: { content: "area-6", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-7": {
+              text: { content: "area-7", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-8": {
+              text: { content: "area-8", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-9": {
+              text: { content: "area-9", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-10": {
+              text: { content: "area-10", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-11": {
+              text: { content: "area-11", attrs: { "font-size": 6 } },
+              attrs: {
+                fill: factionData.picatun.color,
+                stroke: factionData.picatun.colorHover,
+              },
+              attrsHover: {
+                fill: factionData.picatun.colorHover,
+              },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-12": {
+              text: { content: "area-12", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-13": {
+              text: { content: "area-13", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-14": {
+              text: { content: "area-14", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-15": {
+              text: { content: "area-15", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-16": {
+              text: { content: "area-16", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-17": {
+              text: { content: "area-17", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-18": {
+              text: { content: "area-18", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-19": {
+              text: { content: "area-19", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-20": {
+              text: { content: "area-20", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-21": {
+              text: { content: "area-21", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-22": {
+              text: { content: "area-22", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-23": {
+              text: { content: "area-23", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-24": {
+              text: { content: "area-24", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-25": {
+              text: { content: "area-25", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-26": {
+              text: { content: "area-26", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-27": {
+              text: { content: "area-27", attrs: { "font-size": 6 } },
+              attrs: {
+                fill: factionData.nelomica.color,
+                stroke: factionData.nelomica.colorHover,
+              },
+              attrsHover: {
+                fill: factionData.nelomica.colorHover,
+              },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-28": {
+              text: { content: "area-28", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-29": {
+              text: { content: "area-29", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-30": {
+              text: { content: "area-30", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-31": {
+              text: { content: "area-31", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-32": {
+              text: { content: "area-32", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-33": {
+              text: { content: "area-33", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-34": {
+              text: { content: "area-34", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-35": {
+              text: { content: "area-35", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-36": {
+              text: { content: "area-36", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-37": {
+              text: { content: "area-37", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-38": {
+              text: { content: "area-38", attrs: { "font-size": 6 } },
+              attrs: {
+                fill: factionData.dormum.color,
+                stroke: factionData.dormum.colorHover,
+              },
+              attrsHover: {
+                fill: factionData.dormum.colorHover,
+              },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-39": {
+              text: { content: "area-39", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-40": {
+              text: { content: "area-40", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-41": {
+              text: { content: "area-41", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-42": {
+              text: { content: "area-42", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-43": {
+              text: { content: "area-43", attrs: { "font-size": 6 } },
+              attrs: {
+                fill: factionData.ridokin.color,
+                stroke: factionData.ridokin.colorHover,
+              },
+              attrsHover: {
+                fill: factionData.ridokin.colorHover,
+              },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-44": {
+              text: { content: "area-44", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-45": {
+              text: { content: "area-45", attrs: { "font-size": 6 } },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-46": {
+              text: {
+                content: "area-46",
+                attrs: { "font-size": 6 },
+                margin: { x: 4, y: 9 },
+              },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
+              },
+            },
+            "area-47": {
+              text: { content: "area-47", attrs: { "font-size": 6 } },
+              attrs: {
+                fill: factionData.kairn.color,
+                stroke: factionData.kairn.colorHover,
+              },
+              attrsHover: {
+                fill: factionData.kairn.colorHover,
+              },
+              tooltip: {
+                content: '<span style="font-weight:bold;">District:</span>',
               },
             },
           },
@@ -270,4 +638,9 @@
       <div class="map-info">Map Info</div>
     </div>
   </body>
+  <link
+    defer
+    href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap"
+    rel="stylesheet"
+  />
 </html>
