@@ -13,18 +13,21 @@
       }
       html {
         margin: 0;
-        background: var(--dark);
+        background: #b3c166;
         color: var(--lighter);
       }
       body {
         color: #5d5d5d;
         font-family: "IM Fell English", Helvetica, Arial, sans-serif;
+        min-height: 100vh;
+        width: 100%;
+        margin: 0;
+        background: url("/public/brass-bg-lg.png");
       }
-
       h1 {
         font-size: 30px;
         margin: auto;
-        margin-top: 50px;
+        margin-top: 10px;
       }
 
       .container {
@@ -32,16 +35,36 @@
         margin: auto;
       }
 
-      .flex-wrap {
+      .map-flex {
         display: flex;
-        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1300px;
+        border-left: 6px solid var(--dark);
+        border-right: 6px solid var(--dark);
+      }
+      .title-wrap {
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+        padding: 0 30px;
+        border-left: 8px groove var(--dark);
+        border-right: 8px groove var(--dark);
+        color: black;
       }
       .map-section {
         flex: 1 1 800px;
         border: 1px solid var(--mid);
-        background: #9ab4c0;
+        background: var(--dark);
+        max-width: 90vh;
+        padding: 12px;
         display: flex;
-        max-width: 92vh;
+        justify-content: center;
+        align-items: center;
       }
       .map-info {
         flex: 0 1 300px;
@@ -58,9 +81,12 @@
       .mapael .map {
         position: relative;
         cursor: pointer;
+        background: #9ab4c0;
       }
       .mapcontainer {
-        flex: 5 1 90%;
+        flex: 0 1 92%;
+        max-height: 90vh;
+        border: 1px solid var(--mid);
       }
       [data-type="area"] {
         stroke-width: 0.3;
@@ -68,12 +94,12 @@
 
       /* For all zoom buttons */
       .mapael .zoomButton {
-        background-color: #fff;
-        border: 1px solid #ccc;
+        background-color: var(--light);
+        border: none;
         color: #000;
-        width: 15px;
-        height: 15px;
-        line-height: 15px;
+        width: 18px;
+        height: 18px;
+        line-height: 21px;
         text-align: center;
         border-radius: 3px;
         cursor: pointer;
@@ -82,11 +108,18 @@
         font-weight: bold;
         left: 10px;
 
+        -webkit-transition: background-color 0.3 ease-in-out;
+        -ms-transition: background-color 0.3 ease-in-out;
+        transition: background-color 0.3 ease-in-out;
+
         -webkit-user-select: none;
         -khtml-user-select: none;
         -moz-user-select: none;
         -o-user-select: none;
         user-select: none;
+      }
+      .mapael .zoomButton:hover {
+        background-color: var(--mid);
       }
 
       /* Reset Zoom button first */
@@ -96,26 +129,37 @@
 
       /* Then Zoom In button */
       .mapael .zoomIn {
-        top: 30px;
+        top: 34px;
       }
 
       /* Then Zoom Out button */
       .mapael .zoomOut {
-        top: 50px;
+        top: 58px;
       }
 
       .mapael .mapTooltip {
         position: absolute;
-        background-color: #474c4b;
-        moz-opacity: 0.7;
-        opacity: 0.7;
+        background: url("/public/tooltip-sm.png");
+        moz-opacity: 0.85;
+        opacity: 0.85;
         filter: alpha(opacity=70);
         border-radius: 10px;
         padding: 10px;
         z-index: 1000;
-        max-width: 200px;
         display: none;
-        color: #fff;
+        height: 144px;
+        width: 158px;
+        color: black;
+        font-size: 18px;
+      }
+
+      /* sidebar */
+      .info-wrap {
+        background: rgba(120, 120, 120, 0.5);
+        flex: 1;
+        padding: 10px 30px;
+        color: black;
+        border: 10px var(--mid) double;
       }
     </style>
 
@@ -133,751 +177,36 @@
     ></script>
     <script src="./src/jquery.mapael.min.js" charset="utf-8"></script>
     <script src="./src/terra_orbis.js" charset="utf-8"></script>
-
-    <script type="text/javascript">
-      $(function () {
-        const factionData = {
-          picatun: {
-            name: "Picatun",
-            color: "#58A540",
-            colorHover: "#429229",
-          },
-          dormum: {
-            name: "Dormum",
-            color: "#E9E7C0",
-            colorHover: "#E9E0AD",
-          },
-          nelomica: {
-            name: "Nelomica",
-            color: "#6DAD98",
-            colorHover: "#459279",
-          },
-          morajiin: {
-            name: "Morajiin",
-            color: "#7A66BB",
-            colorHover: "#634DA9",
-          },
-          ridokin: {
-            name: "Ridokin",
-            color: "#C35BB6",
-            colorHover: "#AC399E",
-          },
-          dwarves: {
-            name: "Dwarves",
-            color: "#7C7968",
-            colorHover: "#444238",
-          },
-          kairn: {
-            name: "Kairn",
-            color: "#7C74C2",
-            colorHover: "#5950A8",
-          },
-        };
-        const ridokinColors = {
-          attrs: {
-            fill: factionData.ridokin.color,
-          },
-          attrsHover: {
-            fill: factionData.ridokin.colorHover,
-          },
-        };
-        const nelomicaColors = {
-          attrs: {
-            fill: factionData.nelomica.color,
-          },
-          attrsHover: {
-            fill: factionData.nelomica.colorHover,
-          },
-        };
-        const morajiinColors = {
-          attrs: {
-            fill: factionData.morajiin.color,
-          },
-          attrsHover: {
-            fill: factionData.morajiin.colorHover,
-          },
-        };
-        const kairnColors = {
-          attrs: {
-            fill: factionData.kairn.color,
-          },
-          attrsHover: {
-            fill: factionData.kairn.colorHover,
-          },
-        };
-        const picatunColors = {
-          attrs: {
-            fill: factionData.picatun.color,
-          },
-          attrsHover: {
-            fill: factionData.picatun.colorHover,
-          },
-        };
-        const dormumColors = {
-          attrs: {
-            fill: factionData.dormum.color,
-          },
-          attrsHover: {
-            fill: factionData.dormum.colorHover,
-          },
-        };
-
-        $(".mapcontainer").mapael({
-          map: {
-            name: "terra_novus",
-            // Enable zoom on the map
-            zoom: {
-              enabled: true,
-              maxLevel: 8,
-              step: 0.6,
-            },
-            // Set default plots and areas style
-            defaultPlot: {
-              attrs: {
-                fill: "#3B5716",
-                opacity: 0.6,
-              },
-              attrsHover: {
-                opacity: 1,
-              },
-              text: {
-                attrs: {
-                  fill: "#223805",
-                  "font-family":
-                    "'IM Fell English', Helvetica, Arial, sans-serif",
-                },
-                attrsHover: {
-                  fill: "#000",
-                },
-              },
-            },
-            defaultArea: {
-              attrs: {
-                fill: "#6F8D48",
-                stroke: "#373836",
-              },
-              attrsHover: {
-                fill: "#52702B",
-              },
-              text: {
-                attrs: {
-                  fill: "#373836",
-                  "font-family":
-                    "'IM Fell English', Helvetica, Arial, sans-serif",
-                },
-                attrsHover: {
-                  fill: "#000",
-                },
-              },
-            },
-          },
-          // Customize some areas of the map
-          areas: {
-            "area-1": {
-              text: {
-                content: "Obereem",
-                attrs: { "font-size": 5 },
-                margin: { x: 8, y: 0 },
-              },
-              href: "http://fr.wikipedia.org/wiki/C%C3%B4te-d%27Or",
-              target: "_blank",
-              tooltip: {
-                content: "<b>District:</b> Obereem",
-              },
-              ...morajiinColors,
-            },
-            "area-2": {
-              text: {
-                content: "Ya-Totori",
-                attrs: { "font-size": 5 },
-                margin: { x: 1, y: 3 },
-              },
-              tooltip: {
-                content: '<b">District:</b> Ya-Totori',
-              },
-              ...ridokinColors,
-            },
-            "area-3": {
-              text: {
-                content: "Stormshire",
-                attrs: { "font-size": 5 },
-                margin: { x: -13.8, y: -11 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Stormshire",
-              },
-              ...kairnColors,
-            },
-            "area-4": {
-              text: {
-                content: "Wawing",
-                attrs: { "font-size": 5 },
-                margin: { x: 3, y: 2 },
-              },
-              tooltip: {
-                content: '<b">District:</b> Wawing',
-              },
-              ...kairnColors,
-            },
-            "area-5": {
-              text: {
-                content: "Shekhwer",
-                attrs: { "font-size": 4.2 },
-                margin: { x: 0, y: -7 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Shekhwer",
-              },
-              ...morajiinColors,
-            },
-            "area-6": {
-              text: {
-                content: "Xihuacoatl",
-                attrs: { "font-size": 5 },
-                margin: { x: 1, y: 2 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Xihuacoatl",
-              },
-              ...nelomicaColors,
-            },
-            "area-7": {
-              text: {
-                content: "Vinocana",
-                attrs: { "font-size": 5 },
-                margin: { x: -2, y: -11 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Vinocana",
-              },
-              ...dormumColors,
-            },
-            "area-8": {
-              text: {
-                content: "Ascrivi",
-                attrs: { "font-size": 5 },
-                margin: { x: -1, y: -10 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Ascrivi",
-              },
-              ...dormumColors,
-            },
-            "area-9": {
-              text: {
-                content: "Batavorro",
-                attrs: { "font-size": 5 },
-                margin: { x: 4, y: 2 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Batavorro",
-              },
-              ...dormumColors,
-            },
-            "area-10": {
-              text: {
-                content: "Grevon",
-                attrs: { "font-size": 5 },
-                margin: { x: 2, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Grevon",
-              },
-              ...picatunColors,
-            },
-            "area-11": {
-              text: {
-                content: "Ciburford",
-                attrs: { "font-size": 5 },
-                margin: { x: 4, y: 7 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Ciburford",
-              },
-              ...picatunColors,
-            },
-            "area-12": {
-              text: {
-                content: "Floren",
-                attrs: { "font-size": 5 },
-                margin: { x: 2, y: -1 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Floren",
-              },
-              ...dormumColors,
-            },
-            "area-13": {
-              text: {
-                content: "Lucus",
-                attrs: { "font-size": 5 },
-                margin: { x: 2, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Lucus",
-              },
-              ...dormumColors,
-            },
-            "area-14": {
-              text: {
-                content: "Fletiscum",
-                attrs: { "font-size": 5 },
-                margin: { x: -2, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Fletiscum",
-              },
-              ...dormumColors,
-            },
-            "area-15": {
-              text: {
-                content: "Pons-Mar",
-                attrs: { "font-size": 4.2 },
-                margin: { x: -4, y: -5 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Pons-Mar",
-              },
-              ...dormumColors,
-            },
-            "area-16": {
-              text: {
-                content: "Tarragacco",
-                attrs: { "font-size": 5 },
-                margin: { x: -1, y: 1 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Tarragacco",
-              },
-              ...dormumColors,
-            },
-            "area-17": {
-              text: {
-                content: "Vinni",
-                attrs: { "font-size": 5 },
-                margin: { x: -1, y: -6 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Vinni",
-              },
-              ...dormumColors,
-            },
-            "area-18": {
-              text: {
-                content: "Reggio Dinali",
-                attrs: { "font-size": 5 },
-                margin: { x: -1, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Reggio Dinali",
-              },
-              ...dormumColors,
-            },
-            "area-19": {
-              text: {
-                content: "Rowdburn",
-                attrs: { "font-size": 5 },
-                margin: { x: -1, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Rowdburn",
-              },
-              ...picatunColors,
-            },
-            "area-20": {
-              text: {
-                content: "Sgrota",
-                attrs: { "font-size": 5 },
-                margin: { x: -2, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Sgrota",
-              },
-              ...picatunColors,
-            },
-            "area-21": {
-              text: {
-                content: "Aquae Rigo",
-                attrs: { "font-size": 4.2 },
-                margin: { x: 0, y: -7 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Aquae Rigo",
-              },
-              ...dormumColors,
-            },
-            "area-22": {
-              text: {
-                content: "Castellum Novio",
-                attrs: { "font-size": 5 },
-                margin: { x: 0, y: 1 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Castellum Novio",
-              },
-              ...dormumColors,
-            },
-            "area-23": {
-              text: {
-                content: "Arae Tocco",
-                attrs: { "font-size": 5 },
-                margin: { x: 0, y: 2 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Arae Tocco",
-              },
-              ...dormumColors,
-            },
-            "area-24": {
-              text: {
-                content: "Madudjer",
-                attrs: { "font-size": 5 },
-                margin: { x: -4, y: -0.5 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Madudjer",
-              },
-              ...morajiinColors,
-            },
-            "area-25": {
-              text: {
-                content: "Tlatlacho",
-                attrs: { "font-size": 4.2 },
-                margin: { x: 4.5, y: 3 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Tlatlacho",
-              },
-              ...nelomicaColors,
-            },
-            "area-26": {
-              text: {
-                content: "Djo",
-                attrs: { "font-size": 5 },
-                margin: { x: 0, y: 1 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Djo",
-              },
-              ...morajiinColors,
-            },
-            "area-27": {
-              text: {
-                content: "Ixtesantla",
-                attrs: { "font-size": 5 },
-                margin: { x: 1, y: 5 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Ixtesantla",
-              },
-              ...nelomicaColors,
-            },
-            "area-28": {
-              text: {
-                content: "Gamn Dow",
-                attrs: { "font-size": 4.6 },
-                margin: { x: -5.5, y: -4.5 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Gamn Dow",
-              },
-              ...picatunColors,
-            },
-            "area-29": {
-              text: {
-                content: "Ruust-Carl",
-                attrs: { "font-size": 5 },
-                margin: { x: 7, y: 0 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Ruust-Carl",
-              },
-              ...picatunColors,
-            },
-            "area-30": {
-              text: {
-                content: "Ochuacan",
-                attrs: { "font-size": 5 },
-                margin: { x: 1, y: 3 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Ochuacan",
-              },
-              ...nelomicaColors,
-            },
-            "area-31": {
-              text: {
-                content: "Yamuthon",
-                attrs: { "font-size": 5 },
-                margin: { x: -3, y: -1 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Yamuthon",
-              },
-              ...morajiinColors,
-            },
-            "area-32": {
-              text: {
-                content: "Mernskine",
-                attrs: { "font-size": 5 },
-                margin: { x: 19, y: 8 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Mernskine",
-              },
-              ...kairnColors,
-            },
-            "area-33": {
-              text: {
-                content: "Flaw",
-                attrs: { "font-size": 5 },
-                margin: { x: 1, y: 5 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Flaw",
-              },
-              ...kairnColors,
-            },
-            "area-34": {
-              text: {
-                content: "Getrebly",
-                attrs: { "font-size": 5 },
-                margin: { x: 15.5, y: 7 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Getrebly",
-              },
-              ...picatunColors,
-            },
-            "area-35": {
-              text: {
-                content: "Hagon",
-                attrs: { "font-size": 5 },
-                margin: { x: 2, y: 22 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Hagon",
-              },
-              ...picatunColors,
-            },
-            "area-36": {
-              text: {
-                content: "Faelaports",
-                attrs: { "font-size": 5 },
-                margin: { x: 7, y: -8 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Faelaports",
-              },
-              ...picatunColors,
-            },
-            "area-37": {
-              text: {
-                content: "Castra Bata",
-                attrs: { "font-size": 4.2 },
-                margin: { x: -1, y: -4 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Castra Bata",
-              },
-              ...dormumColors,
-            },
-            "area-38": {
-              text: {
-                content: "Praetorium Ganae",
-                attrs: { "font-size": 4.2 },
-                margin: { x: 1.8, y: -7.5 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Praetorium Ganae",
-              },
-              ...dormumColors,
-            },
-            "area-39": {
-              text: {
-                content: "Aquil Livii",
-                attrs: { "font-size": 4.2 },
-                margin: { x: 1, y: 3 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Aquil Livii",
-              },
-              ...dormumColors,
-            },
-            "area-40": {
-              text: {
-                content: "Modicium",
-                attrs: { "font-size": 5 },
-                margin: { x: -18, y: -4 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Modicium",
-              },
-              ...dormumColors,
-            },
-            "area-41": {
-              text: {
-                content: "Babukheb",
-                attrs: { "font-size": 5 },
-                margin: { x: -3, y: -1 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Babukheb",
-              },
-              ...morajiinColors,
-            },
-            "area-42": {
-              text: {
-                content: "Ya-chite",
-                attrs: { "font-size": 5 },
-                margin: { x: -7, y: -1 },
-              },
-              tooltip: {
-                content: "<b>District:</b > Ya-chite",
-              },
-              ...ridokinColors,
-            },
-            "area-43": {
-              text: {
-                content: "Nobo Jato",
-                attrs: { "font-size": 5 },
-                margin: { x: 5, y: -3 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Nobo Jato",
-              },
-              ...ridokinColors,
-            },
-            "area-44": {
-              text: {
-                content: "f.o. Puachicqueh",
-                attrs: { "font-size": 5 },
-                margin: { x: 24, y: -12 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Fingers of Puachicqueh",
-              },
-              ...nelomicaColors,
-            },
-            "area-45": {
-              text: {
-                content: "Is. of Tatla",
-                attrs: { "font-size": 5 },
-                margin: { x: -16, y: -4 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Islands of Tatla",
-              },
-              ...nelomicaColors,
-            },
-            "area-46": {
-              text: {
-                content: "Tepec Xi",
-                attrs: { "font-size": 5 },
-                margin: { x: 6, y: 9 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Tepec Xi",
-              },
-              ...nelomicaColors,
-            },
-            "area-47": {
-              text: {
-                content: "Wintertuithe",
-                attrs: { "font-size": 5 },
-                margin: { x: 19, y: 16 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Wintertuithe",
-              },
-              ...kairnColors,
-            },
-            "area-48": {
-              text: {
-                content: "Ayotle",
-                attrs: { "font-size": 5 },
-                margin: { x: 1, y: 2 },
-              },
-              tooltip: {
-                content: "<b>District:</b> Ayotle",
-              },
-              ...nelomicaColors,
-            },
-          },
-
-          // Add some plots on the map
-          plots: {
-            // Image plot
-            city: {
-              type: "image",
-              url: "/public/city-sm.png",
-              width: 14,
-              height: 12,
-              latitude: 140,
-              longitude: 140,
-              attrs: {
-                opacity: 1,
-              },
-              attrsHover: {
-                transform: "s1.2",
-              },
-              href: "http://fr.wikipedia.org/wiki/Paris",
-              target: "_blank",
-            },
-            // Circle plot
-            // lyon: {
-            //   type: "circle",
-            //   size: 30,
-            //   latitude: 165.758888888889,
-            //   longitude: 200.8413888888889,
-            //   value: 700000,
-            //   tooltip: {
-            //     content: '<b>City :</b> Lyon',
-            //   },
-            //   text: { content: "Lyon" },
-            //   href: "http://fr.wikipedia.org/wiki/Lyon",
-            // },
-            // Square plot
-            // rennes: {
-            //   type: "square",
-            //   size: 20,
-            //   latitude: 80,
-            //   longitude: 24,
-            //   tooltip: {
-            //     content: '<b>City :</b> Rennes',
-            //   },
-            //   text: { content: "Rennes" },
-            //   href: "http://fr.wikipedia.org/wiki/Rennes",
-            // },
-            // Plot positioned by x and y instead of latitude, longitude
-            myplot: {
-              x: 100,
-              y: 100,
-              text: {
-                content: "My plot",
-                position: "bottom",
-                attrs: { "font-size": 5, fill: "#004a9b", opacity: 0.6 },
-                attrsHover: { fill: "#004a9b", opacity: 1 },
-              },
-            },
-          },
-        });
-      });
-    </script>
   </head>
 
   <body>
-    <div class="title">Nova Terra</div>
-    <div class="flex-wrap">
+    <div class="title-wrap">
+      <div class="title">The world of Terra Orbis</div>
+    </div>
+    <div class="map-flex">
       <div class="map-section">
         <div class="mapcontainer">
           <div class="map">
             <span>Alternative content for the map</span>
           </div>
         </div>
-        <div class="map-sidebar">Terra Orbis</div>
       </div>
-      <div class="map-info">Map Info</div>
+      <div class="info-wrap">
+        <div id="info-sidebar">
+          <h1 class="map-info">Terra Orbis Map - 455 ARB</h1>
+          <h3>A world in Flux</h3>
+          <p>
+            The world of Terra Orbis lies in a deep state of turmoil, multiple
+            factions slide between ever changing alliances each trying to ply
+            their hand, via war or diplomacy. Smaller city states hang in the
+            balance trying to placate their masters while isolating themselves
+            from wastefull violence and trouble, the world already providing
+            enough of those itself.
+          </p>
+          <h3>The Factions</h3>
+          <p>The seven civilizations hold the vast quantity of land</p>
+        </div>
+      </div>
     </div>
   </body>
   <link

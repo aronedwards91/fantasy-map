@@ -134,3 +134,764 @@
 
   return Mapael;
 });
+
+// Map Data
+$(function () {
+  const factionData = {
+    picatun: {
+      name: "Picatun",
+      color: "#58A540",
+      colorHover: "#429229",
+    },
+    dormum: {
+      name: "Dormum",
+      color: "#E9E7C0",
+      colorHover: "#E9E0AD",
+    },
+    nelomica: {
+      name: "Nelomica",
+      color: "#6DAD98",
+      colorHover: "#459279",
+    },
+    morajiin: {
+      name: "Morajiin",
+      color: "#7A66BB",
+      colorHover: "#634DA9",
+    },
+    ridokin: {
+      name: "Ridokin",
+      color: "#C35BB6",
+      colorHover: "#AC399E",
+    },
+    dwarves: {
+      name: "Dwarves",
+      color: "#7C7968",
+      colorHover: "#444238",
+    },
+    kairn: {
+      name: "Kairn",
+      color: "#7C74C2",
+      colorHover: "#5950A8",
+    },
+    orkkin: {
+      name: "Orkkin",
+      color: "#BC3E3E",
+      colorHover: "#9C1616",
+    },
+    naga: {
+      name: "Naga",
+      color: "#F18B2F",
+      colorHover: "#CE6801",
+    },
+  };
+  const ridokinColors = {
+    attrs: {
+      fill: factionData.ridokin.color,
+    },
+    attrsHover: {
+      fill: factionData.ridokin.colorHover,
+    },
+  };
+  const nelomicaColors = {
+    attrs: {
+      fill: factionData.nelomica.color,
+    },
+    attrsHover: {
+      fill: factionData.nelomica.colorHover,
+    },
+  };
+  const morajiinColors = {
+    attrs: {
+      fill: factionData.morajiin.color,
+    },
+    attrsHover: {
+      fill: factionData.morajiin.colorHover,
+    },
+  };
+  const kairnColors = {
+    attrs: {
+      fill: factionData.kairn.color,
+    },
+    attrsHover: {
+      fill: factionData.kairn.colorHover,
+    },
+  };
+  const picatunColors = {
+    attrs: {
+      fill: factionData.picatun.color,
+    },
+    attrsHover: {
+      fill: factionData.picatun.colorHover,
+    },
+  };
+  const dormumColors = {
+    attrs: {
+      fill: factionData.dormum.color,
+    },
+    attrsHover: {
+      fill: factionData.dormum.colorHover,
+    },
+  };
+  const orkkinColors = {
+    attrs: {
+      fill: factionData.orkkin.color,
+    },
+    attrsHover: {
+      fill: factionData.orkkin.colorHover,
+    },
+  };
+  const nagaColors = {
+    attrs: {
+      fill: factionData.naga.color,
+    },
+    attrsHover: {
+      fill: factionData.naga.colorHover,
+    },
+  };
+
+  const districtsData = {
+    Obereem: {
+      name: "Obereem",
+      colors: { ...morajiinColors },
+    },
+  };
+
+  $(".mapcontainer").mapael({
+    map: {
+      name: "terra_novus",
+      // Enable zoom on the map
+      zoom: {
+        enabled: true,
+        maxLevel: 8,
+        step: 0.6,
+      },
+      // Set default plots and areas style
+      defaultPlot: {
+        attrs: {
+          fill: "#3B5716",
+          opacity: 0.6,
+        },
+        attrsHover: {
+          opacity: 1,
+        },
+        text: {
+          attrs: {
+            fill: "#223805",
+            "font-family": "'IM Fell English', Helvetica, Arial, sans-serif",
+          },
+          attrsHover: {
+            fill: "#000",
+          },
+        },
+      },
+      defaultArea: {
+        attrs: {
+          fill: "#6F8D48",
+          stroke: "#373836",
+        },
+        attrsHover: {
+          fill: "#52702B",
+        },
+        text: {
+          attrs: {
+            fill: "#373836",
+            "font-family": "'IM Fell English', Helvetica, Arial, sans-serif",
+          },
+          attrsHover: {
+            fill: "#000",
+          },
+        },
+      },
+    },
+    // Customize some areas of the map
+    areas: {
+      "area-1": {
+        text: {
+          content: districtsData.Obereem.name,
+          attrs: { "font-size": 5 },
+          margin: { x: 8, y: 0 },
+        },
+        // href: "http://fr.wikipedia.org/wiki/C%C3%B4te-d%27Or",
+        // target: "_blank",
+        tooltip: {
+          content: "<b>District:</b> " + districtsData.Obereem.name,
+        },
+        ...districtsData.Obereem.colors,
+      },
+      "area-2": {
+        text: {
+          content: "Ya-Totori",
+          attrs: { "font-size": 5 },
+          margin: { x: 1, y: 3 },
+        },
+        tooltip: {
+          content: '<b">District:</b> Ya-Totori',
+        },
+        ...ridokinColors,
+      },
+      "area-3": {
+        text: {
+          content: "Stormshire",
+          attrs: { "font-size": 5 },
+          margin: { x: -13.8, y: -11 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Stormshire",
+        },
+        ...kairnColors,
+      },
+      "area-4": {
+        text: {
+          content: "Wawing",
+          attrs: { "font-size": 5 },
+          margin: { x: 3, y: 2 },
+        },
+        tooltip: {
+          content: '<b">District:</b> Wawing',
+        },
+        ...kairnColors,
+      },
+      "area-5": {
+        text: {
+          content: "Shekhwer",
+          attrs: { "font-size": 4.2 },
+          margin: { x: 0, y: -7 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Shekhwer",
+        },
+        ...nagaColors,
+      },
+      "area-6": {
+        text: {
+          content: "Xihuacoatl",
+          attrs: { "font-size": 5 },
+          margin: { x: 1, y: 2 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Xihuacoatl",
+        },
+        ...nelomicaColors,
+      },
+      "area-7": {
+        text: {
+          content: "Vinocana",
+          attrs: { "font-size": 5 },
+          margin: { x: -2, y: -11 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Vinocana",
+        },
+        ...dormumColors,
+      },
+      "area-8": {
+        text: {
+          content: "Ascrivi",
+          attrs: { "font-size": 5 },
+          margin: { x: -1, y: -10 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Ascrivi",
+        },
+        ...dormumColors,
+      },
+      "area-9": {
+        text: {
+          content: "Batavorro",
+          attrs: { "font-size": 5 },
+          margin: { x: 4, y: 2 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Batavorro",
+        },
+        ...dormumColors,
+      },
+      "area-10": {
+        text: {
+          content: "Grevon",
+          attrs: { "font-size": 5 },
+          margin: { x: 2, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Grevon",
+        },
+        ...picatunColors,
+      },
+      "area-11": {
+        text: {
+          content: "Ciburford",
+          attrs: { "font-size": 5 },
+          margin: { x: 4, y: 7 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Ciburford",
+        },
+        ...picatunColors,
+      },
+      "area-12": {
+        text: {
+          content: "Floren",
+          attrs: { "font-size": 5 },
+          margin: { x: 2, y: -1 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Floren",
+        },
+        ...dormumColors,
+      },
+      "area-13": {
+        text: {
+          content: "Lucus",
+          attrs: { "font-size": 5 },
+          margin: { x: 2, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Lucus",
+        },
+        ...dormumColors,
+      },
+      "area-14": {
+        text: {
+          content: "Fletiscum",
+          attrs: { "font-size": 5 },
+          margin: { x: -2, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Fletiscum",
+        },
+        ...dormumColors,
+      },
+      "area-15": {
+        text: {
+          content: "Pons-Mar",
+          attrs: { "font-size": 4.2 },
+          margin: { x: -4, y: -5 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Pons-Mar",
+        },
+        ...dormumColors,
+      },
+      "area-16": {
+        text: {
+          content: "Tarragacco",
+          attrs: { "font-size": 5 },
+          margin: { x: -1, y: 1 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Tarragacco",
+        },
+        ...dormumColors,
+      },
+      "area-17": {
+        text: {
+          content: "Vinni",
+          attrs: { "font-size": 5 },
+          margin: { x: -1, y: -6 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Vinni",
+        },
+        ...dormumColors,
+      },
+      "area-18": {
+        text: {
+          content: "Reggio Dinali",
+          attrs: { "font-size": 5 },
+          margin: { x: -1, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Reggio Dinali",
+        },
+        ...dormumColors,
+      },
+      "area-19": {
+        text: {
+          content: "Rowdburn",
+          attrs: { "font-size": 5 },
+          margin: { x: -1, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Rowdburn",
+        },
+        ...picatunColors,
+      },
+      "area-20": {
+        text: {
+          content: "Sgrota",
+          attrs: { "font-size": 5 },
+          margin: { x: -2, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Sgrota",
+        },
+        ...orkkinColors,
+      },
+      "area-21": {
+        text: {
+          content: "Aquae Rigo",
+          attrs: { "font-size": 4.2 },
+          margin: { x: 0, y: -7 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Aquae Rigo",
+        },
+        ...dormumColors,
+      },
+      "area-22": {
+        text: {
+          content: "Castellum Novio",
+          attrs: { "font-size": 5 },
+          margin: { x: 0, y: 1 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Castellum Novio",
+        },
+        ...dormumColors,
+      },
+      "area-23": {
+        text: {
+          content: "Arae Tocco",
+          attrs: { "font-size": 5 },
+          margin: { x: 0, y: 2 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Arae Tocco",
+        },
+        ...dormumColors,
+      },
+      "area-24": {
+        text: {
+          content: "Madudjer",
+          attrs: { "font-size": 5 },
+          margin: { x: -4, y: -0.5 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Madudjer",
+        },
+        ...morajiinColors,
+      },
+      "area-25": {
+        text: {
+          content: "Tlatlacho",
+          attrs: { "font-size": 4.2 },
+          margin: { x: 4.5, y: 3 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Tlatlacho",
+        },
+        ...nelomicaColors,
+      },
+      "area-26": {
+        text: {
+          content: "Djo",
+          attrs: { "font-size": 5 },
+          margin: { x: 0, y: 1 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Djo",
+        },
+        ...morajiinColors,
+      },
+      "area-27": {
+        text: {
+          content: "Ixtesantla",
+          attrs: { "font-size": 5 },
+          margin: { x: 1, y: 5 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Ixtesantla",
+        },
+        ...nelomicaColors,
+      },
+      "area-28": {
+        text: {
+          content: "Gamn Dow",
+          attrs: { "font-size": 4.6 },
+          margin: { x: -5.5, y: -4.5 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Gamn Dow",
+        },
+        ...picatunColors,
+      },
+      "area-29": {
+        text: {
+          content: "Ruust-Carl",
+          attrs: { "font-size": 5 },
+          margin: { x: 7, y: 0 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Ruust-Carl",
+        },
+        ...picatunColors,
+      },
+      "area-30": {
+        text: {
+          content: "Ochuacan",
+          attrs: { "font-size": 5 },
+          margin: { x: 1, y: 3 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Ochuacan",
+        },
+        ...nelomicaColors,
+      },
+      "area-31": {
+        text: {
+          content: "Yamuthon",
+          attrs: { "font-size": 5 },
+          margin: { x: -3, y: -1 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Yamuthon",
+        },
+        ...morajiinColors,
+      },
+      "area-32": {
+        text: {
+          content: "Mernskine",
+          attrs: { "font-size": 5 },
+          margin: { x: 19, y: 8 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Mernskine",
+        },
+        ...kairnColors,
+      },
+      "area-33": {
+        text: {
+          content: "Flaw",
+          attrs: { "font-size": 5 },
+          margin: { x: 1, y: 5 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Flaw",
+        },
+        ...kairnColors,
+      },
+      "area-34": {
+        text: {
+          content: "Getrebly",
+          attrs: { "font-size": 5 },
+          margin: { x: 15.5, y: 7 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Getrebly",
+        },
+        ...picatunColors,
+      },
+      "area-35": {
+        text: {
+          content: "Hagon",
+          attrs: { "font-size": 5 },
+          margin: { x: 2, y: 22 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Hagon",
+        },
+        ...picatunColors,
+      },
+      "area-36": {
+        text: {
+          content: "Faelaports",
+          attrs: { "font-size": 5 },
+          margin: { x: 7, y: -8 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Faelaports",
+        },
+        ...picatunColors,
+      },
+      "area-37": {
+        text: {
+          content: "Castra Bata",
+          attrs: { "font-size": 4.2 },
+          margin: { x: -1, y: -4 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Castra Bata",
+        },
+        ...orkkinColors,
+      },
+      "area-38": {
+        text: {
+          content: "Praetorium Ganae",
+          attrs: { "font-size": 4.2 },
+          margin: { x: 1.8, y: -7.5 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Praetorium Ganae",
+        },
+        ...dormumColors,
+      },
+      "area-39": {
+        text: {
+          content: "Aquil Livii",
+          attrs: { "font-size": 4.2 },
+          margin: { x: 1, y: 3 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Aquil Livii",
+        },
+        ...dormumColors,
+      },
+      "area-40": {
+        text: {
+          content: "Modicium",
+          attrs: { "font-size": 5 },
+          margin: { x: -18, y: -4 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Modicium",
+        },
+        ...dormumColors,
+      },
+      "area-41": {
+        text: {
+          content: "Babukheb",
+          attrs: { "font-size": 5 },
+          margin: { x: -3, y: -1 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Babukheb",
+        },
+        ...morajiinColors,
+      },
+      "area-42": {
+        text: {
+          content: "Ya-chite",
+          attrs: { "font-size": 5 },
+          margin: { x: -7, y: -1 },
+        },
+        tooltip: {
+          content: "<b>District:</b > Ya-chite",
+        },
+        ...ridokinColors,
+      },
+      "area-43": {
+        text: {
+          content: "Nobo Jato",
+          attrs: { "font-size": 5 },
+          margin: { x: 5, y: -3 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Nobo Jato",
+        },
+        ...ridokinColors,
+      },
+      "area-44": {
+        text: {
+          content: "f.o. Puachicqueh",
+          attrs: { "font-size": 5 },
+          margin: { x: 24, y: -12 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Fingers of Puachicqueh",
+        },
+        ...nelomicaColors,
+      },
+      "area-45": {
+        text: {
+          content: "Is. of Tatla",
+          attrs: { "font-size": 5 },
+          margin: { x: -16, y: -4 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Islands of Tatla",
+        },
+        ...nelomicaColors,
+      },
+      "area-46": {
+        text: {
+          content: "Tepec Xi",
+          attrs: { "font-size": 5 },
+          margin: { x: 6, y: 9 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Tepec Xi",
+        },
+        ...nelomicaColors,
+      },
+      "area-47": {
+        text: {
+          content: "Wintertuithe",
+          attrs: { "font-size": 5 },
+          margin: { x: 19, y: 16 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Wintertuithe",
+        },
+        ...kairnColors,
+      },
+      "area-48": {
+        text: {
+          content: "Ayotle",
+          attrs: { "font-size": 5 },
+          margin: { x: 1, y: 2 },
+        },
+        tooltip: {
+          content: "<b>District:</b> Ayotle",
+        },
+        ...nelomicaColors,
+      },
+    },
+
+    // Add some plots on the map
+    plots: {
+      // Image plot
+      city: {
+        type: "image",
+        url: "/public/city-sm.png",
+        width: 14,
+        height: 12,
+        latitude: 140,
+        longitude: 140,
+        attrs: {
+          opacity: 1,
+        },
+        attrsHover: {
+          transform: "s1.2",
+        },
+        href: "http://fr.wikipedia.org/wiki/Paris",
+        target: "_blank",
+      },
+      // Circle plot
+      // lyon: {
+      //   type: "circle",
+      //   size: 30,
+      //   latitude: 165.758888888889,
+      //   longitude: 200.8413888888889,
+      //   value: 700000,
+      //   tooltip: {
+      //     content: '<b>City :</b> Lyon',
+      //   },
+      //   text: { content: "Lyon" },
+      //   href: "http://fr.wikipedia.org/wiki/Lyon",
+      // },
+      // Square plot
+      // rennes: {
+      //   type: "square",
+      //   size: 20,
+      //   latitude: 80,
+      //   longitude: 24,
+      //   tooltip: {
+      //     content: '<b>City :</b> Rennes',
+      //   },
+      //   text: { content: "Rennes" },
+      //   href: "http://fr.wikipedia.org/wiki/Rennes",
+      // },
+      // Plot positioned by x and y instead of latitude, longitude
+      myplot: {
+        x: 100,
+        y: 100,
+        text: {
+          content: "My plot",
+          position: "bottom",
+          attrs: { "font-size": 5, fill: "#004a9b", opacity: 0.6 },
+          attrsHover: { fill: "#004a9b", opacity: 1 },
+        },
+      },
+    },
+  });
+});
