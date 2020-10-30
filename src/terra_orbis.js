@@ -303,6 +303,41 @@ $(function () {
       nelomicaColors,
       "Heavy Rainforest, huge mangroves, Many Nelomica tribes"
     ),
+    Ixtesantla: new District(
+      "Ixtesantla",
+      nelomicaColors,
+      "Rolling hills coated with thick rainforest, many caverns, few giant Ochloco trees, many Nelomica cities"
+    ),
+    Ayotle: new District(
+      "Ayotle",
+      nelomicaColors,
+      "Rainforests, gaseous swamps with giant sinkhole villages used by the Nelomica for crystal gathering"
+    ),
+    IslandsTatla: new District(
+      "Islands of Tatla",
+      nelomicaColors,
+      "Warm, redgrass plains & many giant Ochloco trees, many ancient Nelomica tree cities"
+    ),
+    Ochuacan: new District(
+      "Ochuacan",
+      nelomicaColors,
+      "Rainforest & Floating cliffs rising above lake, many Nelomica Holy Temples, some small cities"
+    ),
+    FOPuachicqueh: new District(
+      "Fingers of Puachicqueh",
+      nelomicaColors,
+      "Mudflats spotted with jungle, some small coastal Nelomica cities"
+    ),
+    Xihuacoatl: new District(
+      "Xihuacoatl",
+      nelomicaColors,
+      "Dry mountain ranges, some rainforest with occasional giant Ochloco trees hosting Nelomica city."
+    ),
+    Tlatlacho: new District(
+      "Tlatlacho",
+      nelomicaColors,
+      "Rainforest rich wetland, many Nelomica lake cities"
+    ),
     // Dormum
     Modicium: new District(
       "Modicium",
@@ -524,14 +559,11 @@ $(function () {
       },
       "area-6": {
         text: {
-          content: "Xihuacoatl",
+          content: districtsData.Xihuacoatl.name,
           attrs: { "font-size": 5 },
           margin: { x: 1, y: 2 },
         },
-        tooltip: {
-          content: "<b>District:</b> Xihuacoatl",
-        },
-        ...nelomicaColors,
+        ...districtsData.Xihuacoatl.areaData,
       },
       "area-7": {
         text: {
@@ -724,14 +756,11 @@ $(function () {
       },
       "area-25": {
         text: {
-          content: "Tlatlacho",
+          content: districtsData.Tlatlacho.name,
           attrs: { "font-size": 4.2 },
           margin: { x: 4.5, y: 3 },
         },
-        tooltip: {
-          content: "<b>District:</b> Tlatlacho",
-        },
-        ...nelomicaColors,
+        ...districtsData.Tlatlacho.areaData,
       },
       "area-26": {
         text: {
@@ -743,14 +772,11 @@ $(function () {
       },
       "area-27": {
         text: {
-          content: "Ixtesantla",
+          content: districtsData.Ixtesantla.name,
           attrs: { "font-size": 5 },
           margin: { x: 1, y: 5 },
         },
-        tooltip: {
-          content: "<b>District:</b> Ixtesantla",
-        },
-        ...nelomicaColors,
+        ...districtsData.Ixtesantla.areaData,
       },
       "area-28": {
         text: {
@@ -776,14 +802,11 @@ $(function () {
       },
       "area-30": {
         text: {
-          content: "Ochuacan",
+          content: districtsData.Ochuacan.name,
           attrs: { "font-size": 5 },
           margin: { x: 1, y: 3 },
         },
-        tooltip: {
-          content: "<b>District:</b> Ochuacan",
-        },
-        ...nelomicaColors,
+        ...districtsData.Ochuacan.areaData,
       },
       "area-31": {
         text: {
@@ -906,25 +929,19 @@ $(function () {
       },
       "area-44": {
         text: {
-          content: "f.o. Puachicqueh",
+          content: districtsData.FOPuachicqueh.name,
           attrs: { "font-size": 5 },
           margin: { x: 24, y: -12 },
         },
-        tooltip: {
-          content: "<b>District:</b> Fingers of Puachicqueh",
-        },
-        ...nelomicaColors,
+        ...districtsData.FOPuachicqueh.areaData,
       },
       "area-45": {
         text: {
-          content: "Is. of Tatla",
+          content: districtsData.IslandsTatla.name,
           attrs: { "font-size": 5 },
           margin: { x: -16, y: -4 },
         },
-        tooltip: {
-          content: "<b>District:</b> Islands of Tatla",
-        },
-        ...nelomicaColors,
+        ...districtsData.IslandsTatla.areaData,
       },
       "area-46": {
         text: {
@@ -944,14 +961,11 @@ $(function () {
       },
       "area-48": {
         text: {
-          content: "Ayotle",
+          content: districtsData.Ayotle.name,
           attrs: { "font-size": 5 },
           margin: { x: 1, y: 2 },
         },
-        tooltip: {
-          content: "<b>District:</b> Ayotle",
-        },
-        ...nelomicaColors,
+        ...districtsData.Ayotle.areaData,
       },
     },
 
