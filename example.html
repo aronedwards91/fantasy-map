@@ -152,6 +152,10 @@
         color: black;
         font-size: 18px;
       }
+      .mapael .mapTooltip div {
+        margin-top: 4px;
+        font-size: 15.5px;
+      }
 
       /* sidebar */
       .info-wrap {
@@ -160,6 +164,59 @@
         padding: 10px 30px;
         color: black;
         border: 10px var(--mid) double;
+      }
+      .seperator {
+        height: 2px;
+        background: var(--mid);
+        margin: 10px 0;
+      }
+      .seperator-thin {
+        height: 1px;
+        background: var(--mid);
+        margin: 5px 0;
+      }
+      .topic[data-show="false"] {
+        height: 58px;
+        overflow: hidden;
+      }
+      .topic-title-row {
+        display: flex;
+        justify-content: space-around;
+        cursor: pointer;
+      }
+
+      /* Spinner */
+      .spinner {
+        width: 40px;
+        height: 40px;
+        margin: 100px auto;
+        background-color: #333;
+
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+        animation: sk-scaleout 1s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1);
+          transform: scale(1);
+          opacity: 0;
+        }
       }
     </style>
 

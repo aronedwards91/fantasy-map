@@ -252,9 +252,94 @@ $(function () {
   const districtsData = {
     Obereem: {
       name: "Obereem",
-      colors: { ...morajiinColors },
+      areaData: {
+        ...morajiinColors,
+        eventHandlers: {
+          click: function () {
+            getEntry("Obereem", "district");
+          },
+        },
+        tooltip: {
+          content:
+            "<b>District:</b> <span>Obereem</span> <div>Mountains of the gods. Mountainous, arid, largely held by Morajiin Tribes.</div>",
+        },
+      },
+      info: "<div>Mountains of the gods</div",
+    },
+    Rowdburn: {
+      name: "Rowdburn",
+      areaData: {
+        ...picatunColors,
+        eventHandlers: {
+          click: function () {
+            getEntry("Rowdburn", "district");
+          },
+        },
+        tooltip: {
+          content:
+            "<b>District:</b> <span>Rowdburn</span> <div>Home to the wetland plain & cold forest, temperate, held by Picatun .</div>",
+        },
+      },
+      info: "<div>Mountains of the gods</div",
     },
   };
+
+  function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+    }
+  }
+
+  const sidebarId = "info-sidebar";
+
+  function topicExpandToggleAction(id) {
+    const el = document.getElementById(id);
+    if (el.dataset.show === "true") {
+      el.dataset.show = false;
+    } else {
+      el.dataset.show = true;
+    }
+  }
+  window.topicExpandToggleAction = topicExpandToggleAction;
+
+  function getEntry(name, type) {
+    const SidebarEl = document.getElementById(sidebarId);
+    removeAllChildNodes(SidebarEl);
+
+    const spinner = document.createElement("div");
+    spinner.classList.add("spinner");
+    SidebarEl.appendChild(spinner);
+
+    const url = `/naapi/${type}/${name}.json`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const NewEntryElement = document.createElement("div");
+        let innerHTML = `<h2>${data.title}</h2><p>${data.subtitle}</p>`;
+
+        const topicsHtml = Object.keys(data.topics).map((key, topicIndex) => {
+          const topicID = `topic-${key}`;
+          let returnString = "";
+          if (topicIndex === 0) {
+            returnString += '<div class="seperator"></div>';
+          }
+          returnString += `<div class="topic" id="${topicID}" data-show="true">`;
+          returnString += `<div class="topic-title-row" onclick="topicExpandToggleAction('${topicID}')"><h3>${key}</h3><h3>+</h3></div><div class="seperator-thin"></div>`;
+          data.topics[key].map((arrItem, i, array) => {
+            if (i % 2 === 0) {
+              returnString += `<${arrItem}>${array[i + 1]}</${arrItem}>`;
+            }
+          });
+          return returnString + `</div><div class="seperator"></div>`;
+        });
+        innerHTML += topicsHtml.join("");
+        innerHTML += "</div>";
+        NewEntryElement.innerHTML = innerHTML;
+
+        removeAllChildNodes(SidebarEl);
+        SidebarEl.appendChild(NewEntryElement);
+      });
+  }
 
   $(".mapcontainer").mapael({
     map: {
@@ -311,12 +396,7 @@ $(function () {
           attrs: { "font-size": 5 },
           margin: { x: 8, y: 0 },
         },
-        // href: "http://fr.wikipedia.org/wiki/C%C3%B4te-d%27Or",
-        // target: "_blank",
-        tooltip: {
-          content: "<b>District:</b> " + districtsData.Obereem.name,
-        },
-        ...districtsData.Obereem.colors,
+        ...districtsData.Obereem.areaData,
       },
       "area-2": {
         text: {
@@ -507,14 +587,11 @@ $(function () {
       },
       "area-19": {
         text: {
-          content: "Rowdburn",
+          content: districtsData.Rowdburn.name,
           attrs: { "font-size": 5 },
           margin: { x: -1, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Rowdburn",
-        },
-        ...picatunColors,
+        ...districtsData.Rowdburn.areaData,
       },
       "area-20": {
         text: {
