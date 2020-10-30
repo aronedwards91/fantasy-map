@@ -140,8 +140,16 @@ $(function () {
   const factionData = {
     picatun: {
       name: "Picatun",
+      fname: "Picatun Clans",
       color: "#58A540",
       colorHover: "#429229",
+      plotData: {
+        eventHandlers: {
+          click: function () {
+            getEntry("Picatun", "groups");
+          },
+        },
+      },
     },
     dormum: {
       name: "Dormum",
@@ -479,16 +487,12 @@ $(function () {
       },
       // Set default plots and areas style
       defaultPlot: {
-        attrs: {
-          fill: "#3B5716",
-          opacity: 0.6,
-        },
-        attrsHover: {
-          opacity: 1,
-        },
+        position: "centre",
+        attrs: { "font-size": 15, fill: "#000", opacity: 0.8 },
+        attrsHover: { opacity: 1 },
         text: {
           attrs: {
-            fill: "#223805",
+            fill: "#000",
             "font-family": "'IM Fell English', Helvetica, Arial, sans-serif",
           },
           attrsHover: {
@@ -971,59 +975,118 @@ $(function () {
 
     // Add some plots on the map
     plots: {
-      // Image plot
-      city: {
-        type: "image",
-        url: "/public/city-sm.png",
-        width: 14,
-        height: 12,
-        latitude: 140,
-        longitude: 140,
-        attrs: {
-          opacity: 1,
-        },
-        attrsHover: {
-          transform: "s1.2",
-        },
-        href: "http://fr.wikipedia.org/wiki/Paris",
-        target: "_blank",
-      },
-      // Circle plot
-      // lyon: {
-      //   type: "circle",
-      //   size: 30,
-      //   latitude: 165.758888888889,
-      //   longitude: 200.8413888888889,
-      //   value: 700000,
-      //   tooltip: {
-      //     content: '<b>City :</b> Lyon',
-      //   },
-      //   text: { content: "Lyon" },
-      //   href: "http://fr.wikipedia.org/wiki/Lyon",
-      // },
-      // Square plot
-      // rennes: {
-      //   type: "square",
-      //   size: 20,
-      //   latitude: 80,
-      //   longitude: 24,
-      //   tooltip: {
-      //     content: '<b>City :</b> Rennes',
-      //   },
-      //   text: { content: "Rennes" },
-      //   href: "http://fr.wikipedia.org/wiki/Rennes",
-      // },
-      // Plot positioned by x and y instead of latitude, longitude
-      myplot: {
-        x: 100,
-        y: 100,
+      picatun: {
+        value: 5,
+        x: 118,
+        y: 220,
+        size: 0,
         text: {
-          content: "My plot",
-          position: "bottom",
-          attrs: { "font-size": 5, fill: "#004a9b", opacity: 0.6 },
-          attrsHover: { fill: "#004a9b", opacity: 1 },
+          content: factionData.picatun.fname,
+        },
+        ...factionData.picatun.plotData,
+      },
+      dormum: {
+        value: 5,
+        x: 30,
+        y: 151,
+        size: 0,
+        text: {
+          attrs: { "font-size": 17 },
+          content: "Dormum Empire",
+        },
+      },
+      nelomica: {
+        value: 5,
+        x: 88,
+        y: 61,
+        size: 0,
+        text: {
+          content: "Nelomica Alliance",
+        },
+      },
+      morajiin: {
+        value: 5,
+        x: 80,
+        y: 120,
+        size: 0,
+        text: {
+          attrs: { "font-size": 13 },
+          content: "Morajiin Houses",
+        },
+      },
+      ridokin: {
+        value: 5,
+        x: 182,
+        y: 83,
+        size: 0,
+        text: {
+          attrs: { "font-size": 12 },
+          content: "Ridokin Order",
+        },
+      },
+      kairn: {
+        value: 5,
+        x: 10,
+        y: 251,
+        size: 0,
+        text: {
+          content: "Kairn Clans",
+        },
+      },
+      orkkin: {
+        value: 5,
+        x: 100,
+        y: 182,
+        size: 0,
+        text: {
+          attrs: { "font-size": 13 },
+          content: "Orkkin Tribes",
+        },
+      },
+      naga: {
+        value: 5,
+        x: 174,
+        y: 155,
+        size: 0,
+        text: {
+          attrs: { "font-size": 10 },
+          content: "Naga",
         },
       },
     },
+  });
+
+  const zoomOptHideBig = {
+    animDuration: 300,
+    hiddenOpacity: 0.1,
+    ranges: {
+      plot: {
+        min: 3,
+        max: 10,
+      },
+      area: {
+        min: 0,
+        max: 2,
+      },
+    },
+  };
+  const zoomOptShowBig = {
+    animDuration: 300,
+    hiddenOpacity: 0.1,
+    ranges: {
+      plot: {
+        min: 0,
+        max: 2,
+      },
+    },
+  };
+
+  $(".map").on("afterZoom", function () {
+    const zoomLevel = jQuery(".mapcontainer").data("mapael").zoomData.zoomLevel;
+    if (zoomLevel < 1) {
+      $(".mapcontainer").trigger("showElementsInRange", [zoomOptHideBig]);
+    } else {
+      $(".mapcontainer").trigger("showElementsInRange", [zoomOptShowBig]);
+    }
   });
 });
