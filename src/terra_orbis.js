@@ -345,6 +345,12 @@ $(function () {
 
         removeAllChildNodes(SidebarEl);
         SidebarEl.appendChild(NewEntryElement);
+      })
+      .catch(() => {
+        removeAllChildNodes(SidebarEl);
+        const NoResult = document.createElement("h4");
+        NoResult.innerHTML = "The Codex remains silent on this matter..";
+        SidebarEl.appendChild(NoResult);
       });
   }
 
