@@ -249,39 +249,46 @@ $(function () {
     },
   };
 
+  function District(name, colors, info) {
+    this.name = name;
+    this.areaData = {
+      ...colors,
+      eventHandlers: {
+        click: function () {
+          getEntry(name.replace(" ", "-"), "district");
+        },
+      },
+      tooltip: {
+        content: `<b>District:</b> <span>${name}</span> <div>${info}</div>`,
+      },
+    };
+  }
+
   const districtsData = {
-    Obereem: {
-      name: "Obereem",
-      areaData: {
-        ...morajiinColors,
-        eventHandlers: {
-          click: function () {
-            getEntry("Obereem", "district");
-          },
-        },
-        tooltip: {
-          content:
-            "<b>District:</b> <span>Obereem</span> <div>Mountains of the gods. Mountainous, arid, largely held by Morajiin Tribes.</div>",
-        },
-      },
-      info: "<div>Mountains of the gods</div",
-    },
-    Rowdburn: {
-      name: "Rowdburn",
-      areaData: {
-        ...picatunColors,
-        eventHandlers: {
-          click: function () {
-            getEntry("Rowdburn", "district");
-          },
-        },
-        tooltip: {
-          content:
-            "<b>District:</b> <span>Rowdburn</span> <div>Home to the wetland plain & cold forest, temperate, held by Picatun .</div>",
-        },
-      },
-      info: "<div>Mountains of the gods</div",
-    },
+    // Morajiin
+    Obereem: new District(
+      "Obereem",
+      morajiinColors,
+      "Mountains of the gods. Mountainous, arid, largely held by Morajiin Tribes."
+    ),
+    // Picatun
+    Rowdburn: new District(
+      "Rowdburn",
+      picatunColors,
+      "Home to the wetland plain & cold forest, temperate, held by Picatun ."
+    ),
+    // Nelomica
+    TepecXi: new District(
+      "Tepec Xi",
+      nelomicaColors,
+      "Heavy Rainforest, huge mangroves, Many Nelomica tribes"
+    ),
+    // Dormum
+    Modicium: new District(
+      "Modicium",
+      dormumColors,
+      "Mediterranean islands, rough waters, heavy fishing, Dormum Sea Fortress & food provision."
+    ),
   };
 
   function removeAllChildNodes(parent) {
@@ -815,14 +822,11 @@ $(function () {
       },
       "area-40": {
         text: {
-          content: "Modicium",
+          content: districtsData.Modicium.name,
           attrs: { "font-size": 5 },
           margin: { x: -18, y: -4 },
         },
-        tooltip: {
-          content: "<b>District:</b> Modicium",
-        },
-        ...dormumColors,
+        ...districtsData.Modicium.areaData,
       },
       "area-41": {
         text: {
@@ -881,14 +885,11 @@ $(function () {
       },
       "area-46": {
         text: {
-          content: "Tepec Xi",
+          content: districtsData.TepecXi.name,
           attrs: { "font-size": 5 },
           margin: { x: 6, y: 9 },
         },
-        tooltip: {
-          content: "<b>District:</b> Tepec Xi",
-        },
-        ...nelomicaColors,
+        ...districtsData.TepecXi.areaData,
       },
       "area-47": {
         text: {
