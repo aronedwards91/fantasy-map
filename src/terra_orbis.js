@@ -271,6 +271,26 @@ $(function () {
       morajiinColors,
       "Mountains of the gods. Mountainous, arid, largely held by Morajiin Tribes."
     ),
+    Djo: new District(
+      "Djo",
+      morajiinColors,
+      "Dry desert, home to plentiful river Ataragis, strong Morajiin presence by river & lake."
+    ),
+    Madudjer: new District(
+      "Madudjer",
+      morajiinColors,
+      "Dry plains & Floating Cliffs Anomaly shared with Ochuacan, roving Morajiin groups, small outposts"
+    ),
+    Babukheb: new District(
+      "Babukheb",
+      morajiinColors,
+      "Snaking deep canyons, rich plains & cliffs near sea, Islands with temple complexes, many morajiin ports."
+    ),
+    Yamuthon: new District(
+      "Yamuthon",
+      morajiinColors,
+      "Strongly seasonal moving between dry plains and rich wetland, Many rich Morajiin cities on seashore"
+    ),
     // Picatun
     Rowdburn: new District(
       "Rowdburn",
@@ -288,6 +308,65 @@ $(function () {
       "Modicium",
       dormumColors,
       "Mediterranean islands, rough waters, heavy fishing, Dormum Sea Fortress & food provision."
+    ),
+    // Kairn
+    Flaw: new District(
+      "Flaw",
+      kairnColors,
+      "Tundra, Scrubland, hunting grounds, Kairn Outputs & villages"
+    ),
+    Wintertuithe: new District(
+      "Wintertuithe",
+      kairnColors,
+      "Skypiercing, snow-covered mountains, kairn home & stronghold"
+    ),
+    Mernskine: new District(
+      "Mernskine",
+      kairnColors,
+      "Archipelago, sea cliffs and heavy karst landscape, riddled with snaking caverns, kairn outposts & holy sites"
+    ),
+    Waning: new District(
+      "Waning",
+      kairnColors,
+      "cold scrubland valleys & some volcanoes, few isolated Kairn villages"
+    ),
+    Stormshire: new District(
+      "Stormshire",
+      kairnColors,
+      "Wet, cold temperate grassland, prone to flooding, some small Kairn agricultural cities"
+    ),
+    // Ridokin
+    NoboJato: new District(
+      "Nobo Jato",
+      ridokinColors,
+      "Temperate forest & plains, some heavy mountians, Many Ridokin Monasteries & outposts"
+    ),
+    YaChite: new District(
+      "Ya-Chite",
+      ridokinColors,
+      "Wetland, swamps, Home to Giant Mushroom colonies, dangerous, poor economically, soft Ridokin presence"
+    ),
+    YaTotori: new District(
+      "Ya-Totori",
+      ridokinColors,
+      "Deep Canyons, gorges, underglass corals, Ridokin trading outposts & cities"
+    ),
+    // Orkkin
+    CastraBata: new District(
+      "Castra Bata",
+      orkkinColors,
+      "Lightly wooded steppes, many caves, rolling hills, Orkkin Stronghold on great lake, multiple tribes."
+    ),
+    Sgrota: new District(
+      "Sgrota",
+      orkkinColors,
+      "Sparse steppes, rocky mountains & hills, heavy Orkkin presence, multiple tribes."
+    ),
+    // Naga
+    Shekhwer: new District(
+      "Shekhwer",
+      nagaColors,
+      "Hot desert, few oasis, Naga stronghold, many fire temples"
     ),
   };
 
@@ -413,47 +492,35 @@ $(function () {
       },
       "area-2": {
         text: {
-          content: "Ya-Totori",
+          content: districtsData.YaTotori.name,
           attrs: { "font-size": 5 },
-          margin: { x: 1, y: 3 },
+          margin: { x: -1, y: 3 },
         },
-        tooltip: {
-          content: '<b">District:</b> Ya-Totori',
-        },
-        ...ridokinColors,
+        ...districtsData.YaTotori.areaData,
       },
       "area-3": {
         text: {
-          content: "Stormshire",
+          content: districtsData.Stormshire.name,
           attrs: { "font-size": 5 },
           margin: { x: -13.8, y: -11 },
         },
-        tooltip: {
-          content: "<b>District:</b> Stormshire",
-        },
-        ...kairnColors,
+        ...districtsData.Stormshire.areaData,
       },
       "area-4": {
         text: {
-          content: "Wawing",
+          content: districtsData.Waning.name,
           attrs: { "font-size": 5 },
           margin: { x: 3, y: 2 },
         },
-        tooltip: {
-          content: '<b">District:</b> Wawing',
-        },
-        ...kairnColors,
+        ...districtsData.Waning.areaData,
       },
       "area-5": {
         text: {
-          content: "Shekhwer",
+          content: districtsData.Shekhwer.name,
           attrs: { "font-size": 4.2 },
           margin: { x: 0, y: -7 },
         },
-        tooltip: {
-          content: "<b>District:</b> Shekhwer",
-        },
-        ...nagaColors,
+        ...districtsData.Shekhwer.areaData,
       },
       "area-6": {
         text: {
@@ -608,14 +675,11 @@ $(function () {
       },
       "area-20": {
         text: {
-          content: "Sgrota",
+          content: districtsData.Sgrota.name,
           attrs: { "font-size": 5 },
           margin: { x: -2, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Sgrota",
-        },
-        ...orkkinColors,
+        ...districtsData.Sgrota.areaData,
       },
       "area-21": {
         text: {
@@ -652,14 +716,11 @@ $(function () {
       },
       "area-24": {
         text: {
-          content: "Madudjer",
+          content: districtsData.Madudjer.name,
           attrs: { "font-size": 5 },
           margin: { x: -4, y: -0.5 },
         },
-        tooltip: {
-          content: "<b>District:</b> Madudjer",
-        },
-        ...morajiinColors,
+        ...districtsData.Madudjer.areaData,
       },
       "area-25": {
         text: {
@@ -674,14 +735,11 @@ $(function () {
       },
       "area-26": {
         text: {
-          content: "Djo",
+          content: districtsData.Djo.name,
           attrs: { "font-size": 5 },
           margin: { x: 0, y: 1 },
         },
-        tooltip: {
-          content: "<b>District:</b> Djo",
-        },
-        ...morajiinColors,
+        ...districtsData.Djo.areaData,
       },
       "area-27": {
         text: {
@@ -729,36 +787,27 @@ $(function () {
       },
       "area-31": {
         text: {
-          content: "Yamuthon",
+          content: districtsData.Yamuthon.name,
           attrs: { "font-size": 5 },
           margin: { x: -3, y: -1 },
         },
-        tooltip: {
-          content: "<b>District:</b> Yamuthon",
-        },
-        ...morajiinColors,
+        ...districtsData.Yamuthon.areaData,
       },
       "area-32": {
         text: {
-          content: "Mernskine",
+          content: districtsData.Mernskine.name,
           attrs: { "font-size": 5 },
           margin: { x: 19, y: 8 },
         },
-        tooltip: {
-          content: "<b>District:</b> Mernskine",
-        },
-        ...kairnColors,
+        ...districtsData.Mernskine.areaData,
       },
       "area-33": {
         text: {
-          content: "Flaw",
+          content: districtsData.Flaw.name,
           attrs: { "font-size": 5 },
           margin: { x: 1, y: 5 },
         },
-        tooltip: {
-          content: "<b>District:</b> Flaw",
-        },
-        ...kairnColors,
+        ...districtsData.Flaw.areaData,
       },
       "area-34": {
         text: {
@@ -795,14 +844,11 @@ $(function () {
       },
       "area-37": {
         text: {
-          content: "Castra Bata",
+          content: districtsData.CastraBata.name,
           attrs: { "font-size": 4.2 },
           margin: { x: -1, y: -4 },
         },
-        tooltip: {
-          content: "<b>District:</b> Castra Bata",
-        },
-        ...orkkinColors,
+        ...districtsData.CastraBata.areaData,
       },
       "area-38": {
         text: {
@@ -836,36 +882,27 @@ $(function () {
       },
       "area-41": {
         text: {
-          content: "Babukheb",
+          content: districtsData.Babukheb.name,
           attrs: { "font-size": 5 },
           margin: { x: -3, y: -1 },
         },
-        tooltip: {
-          content: "<b>District:</b> Babukheb",
-        },
-        ...morajiinColors,
+        ...districtsData.Babukheb.areaData,
       },
       "area-42": {
         text: {
-          content: "Ya-chite",
+          content: districtsData.YaChite.name,
           attrs: { "font-size": 5 },
           margin: { x: -7, y: -1 },
         },
-        tooltip: {
-          content: "<b>District:</b > Ya-chite",
-        },
-        ...ridokinColors,
+        ...districtsData.YaChite.areaData,
       },
       "area-43": {
         text: {
-          content: "Nobo Jato",
+          content: districtsData.NoboJato.name,
           attrs: { "font-size": 5 },
           margin: { x: 5, y: -3 },
         },
-        tooltip: {
-          content: "<b>District:</b> Nobo Jato",
-        },
-        ...ridokinColors,
+        ...districtsData.NoboJato.areaData,
       },
       "area-44": {
         text: {
@@ -899,14 +936,11 @@ $(function () {
       },
       "area-47": {
         text: {
-          content: "Wintertuithe",
+          content: districtsData.Wintertuithe.name,
           attrs: { "font-size": 5 },
           margin: { x: 19, y: 16 },
         },
-        tooltip: {
-          content: "<b>District:</b> Wintertuithe",
-        },
-        ...kairnColors,
+        ...districtsData.Wintertuithe.areaData,
       },
       "area-48": {
         text: {
