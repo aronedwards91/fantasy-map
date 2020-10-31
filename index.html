@@ -168,6 +168,20 @@
         color: black;
         border: 10px var(--mid) double;
       }
+      .info-scroll {
+        overflow-y: scroll;
+        min-height: 84vh;
+        max-height: 84vh;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .info-scroll::-webkit-scrollbar {
+        display: none;
+      }
+      .bar-bg {
+        height: 4px;
+        background: var(--dark);
+      }
       .seperator {
         height: 2px;
         background: var(--mid);
@@ -252,19 +266,23 @@
         </div>
       </div>
       <div class="info-wrap">
-        <div id="info-sidebar">
-          <h1 class="map-info">Codex Ellium - Terra Orbis - 455 ARB</h1>
-          <h3>A world in Flux</h3>
-          <p>
-            The world of Terra Orbis lies in a deep state of turmoil, multiple
-            factions slide between ever changing alliances each trying to ply
-            their hand, via war or diplomacy. Smaller city states hang in the
-            balance trying to placate their masters while isolating themselves
-            from wastefull violence and trouble, the world already providing
-            enough of those itself.
-          </p>
-          <h3>The Factions</h3>
-          <p>The seven civilizations hold the vast quantity of land</p>
+        <div class="info-scroll">
+          <div class="bar-bg"></div>
+          <div id="info-sidebar">
+            <h1 class="map-info">Codex Ellium - Terra Orbis - 455 ARB</h1>
+            <h3>A world in Flux</h3>
+            <p>
+              The world of Terra Orbis lies in a deep state of turmoil, multiple
+              factions slide between ever changing alliances each trying to ply
+              their hand, via war or diplomacy. Smaller city states hang in the
+              balance trying to placate their masters while isolating themselves
+              from wastefull violence and trouble, the world already providing
+              enough of those itself.
+            </p>
+            <h3>The Factions</h3>
+            <p>The seven civilizations hold the vast quantity of land</p>
+          </div>
+          <div class="bar-bg"></div>
         </div>
       </div>
     </div>
