@@ -1,7 +1,7 @@
 ## To Do
 
-- fill tooltips
 - map loader
+- fill tooltips
+- high text icons - test interaction
 - sidebar scroll
-- zoom text levels
 - Error catching codex entry

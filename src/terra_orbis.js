@@ -510,7 +510,7 @@ $(function () {
         },
         text: {
           attrs: {
-            fill: "#373836",
+            fill: "#444",
             "font-family": "'IM Fell English', Helvetica, Arial, sans-serif",
           },
           attrsHover: {
