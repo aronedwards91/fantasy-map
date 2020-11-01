@@ -140,16 +140,8 @@ $(function () {
   const factionData = {
     picatun: {
       name: "Picatun",
-      fname: "Picatun Clans",
       color: "#58A540",
       colorHover: "#429229",
-      plotData: {
-        eventHandlers: {
-          click: function () {
-            getEntry("Picatun", "groups");
-          },
-        },
-      },
     },
     dormum: {
       name: "Dormum",
@@ -255,6 +247,14 @@ $(function () {
     attrsHover: {
       fill: factionData.naga.colorHover,
     },
+  };
+  const groupPlotDefault = {
+    value: 5,
+    size: 0,
+    width: 20,
+    height: 20,
+    type: "image",
+    cssClass: "group",
   };
 
   function District(name, colors, info) {
@@ -975,24 +975,38 @@ $(function () {
 
     // Add some plots on the map
     plots: {
+      // Groups
       picatun: {
-        value: 5,
-        x: 118,
+        x: 150,
         y: 220,
-        size: 0,
+        ...groupPlotDefault,
+        width: 15,
         text: {
-          content: factionData.picatun.fname,
+          attrs: { "font-size": 17 },
+          content: "Picatun Clans",
+          position: "bottom",
         },
-        ...factionData.picatun.plotData,
+        url: "/public/icons/picatun-banner.svg",
+        eventHandlers: {
+          click: function () {
+            getEntry("Picatun", "groups");
+          },
+        },
       },
       dormum: {
-        value: 5,
-        x: 30,
-        y: 151,
-        size: 0,
+        x: 70,
+        y: 136,
+        ...groupPlotDefault,
         text: {
           attrs: { "font-size": 17 },
           content: "Dormum Empire",
+          position: "bottom",
+        },
+        url: "/public/icons/dormum-banner.svg",
+        eventHandlers: {
+          click: function () {
+            getEntry("Dormum", "groups");
+          },
         },
       },
       nelomica: {
@@ -1005,32 +1019,50 @@ $(function () {
         },
       },
       morajiin: {
-        value: 5,
-        x: 80,
-        y: 120,
-        size: 0,
+        x: 120,
+        y: 100,
+        ...groupPlotDefault,
         text: {
           attrs: { "font-size": 13 },
           content: "Morajiin Houses",
+          position: "bottom",
+        },
+        url: "/public/icons/morajiin-banner.svg",
+        eventHandlers: {
+          click: function () {
+            getEntry("Morajiin", "groups");
+          },
         },
       },
       ridokin: {
-        value: 5,
-        x: 182,
-        y: 83,
-        size: 0,
+        x: 242,
+        y: 80,
+        ...groupPlotDefault,
         text: {
           attrs: { "font-size": 12 },
           content: "Ridokin Order",
+          position: "bottom",
+        },
+        url: "/public/icons/ridokin-banner.svg",
+        eventHandlers: {
+          click: function () {
+            getEntry("Ridokin", "groups");
+          },
         },
       },
       kairn: {
-        value: 5,
-        x: 10,
-        y: 251,
-        size: 0,
+        x: 50,
+        y: 245,
+        ...groupPlotDefault,
+        url: "/public/icons/kairn-banner.svg",
         text: {
           content: "Kairn Clans",
+          position: "bottom",
+        },
+        eventHandlers: {
+          click: function () {
+            getEntry("Kairn", "groups");
+          },
         },
       },
       orkkin: {
@@ -1053,6 +1085,7 @@ $(function () {
           content: "Naga",
         },
       },
+      // Cities
     },
   });
 
