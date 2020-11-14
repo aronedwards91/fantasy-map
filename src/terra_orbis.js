@@ -978,7 +978,7 @@ $(function () {
       // Groups
       picatun: {
         x: 150,
-        y: 220,
+        y: 218,
         ...groupPlotDefault,
         width: 15,
         text: {
@@ -1011,12 +1011,14 @@ $(function () {
       },
       nelomica: {
         value: 5,
-        x: 88,
-        y: 61,
-        size: 0,
+        x: 128,
+        y: 54,
+        ...groupPlotDefault,
         text: {
           content: "Nelomica Alliance",
+          position: "bottom",
         },
+        url: "/public/icons/nelomica-banner.svg",
       },
       morajiin: {
         x: 120,
@@ -1044,11 +1046,6 @@ $(function () {
           position: "bottom",
         },
         url: "/public/icons/ridokin-banner.svg",
-        eventHandlers: {
-          click: function () {
-            getEntry("Ridokin", "groups");
-          },
-        },
       },
       kairn: {
         x: 50,
@@ -1059,30 +1056,30 @@ $(function () {
           content: "Kairn Clans",
           position: "bottom",
         },
-        eventHandlers: {
-          click: function () {
-            getEntry("Kairn", "groups");
-          },
-        },
       },
       orkkin: {
-        value: 5,
-        x: 100,
-        y: 182,
-        size: 0,
+        x: 130,
+        y: 174,
+        ...groupPlotDefault,
+        width: 15,
+        height: 15,
+        url: "/public/icons/orkkish-banner.svg",
         text: {
-          attrs: { "font-size": 13 },
+          attrs: { "font-size": 12 },
           content: "Orkkin Tribes",
+          position: "bottom",
         },
+        cssClass: "group",
       },
       naga: {
-        value: 5,
-        x: 174,
-        y: 155,
-        size: 0,
+        x: 188,
+        y: 142,
+        ...groupPlotDefault,
+        url: "/public/icons/naga-banner.svg",
         text: {
           attrs: { "font-size": 10 },
           content: "Naga",
+          position: "bottom",
         },
       },
       // Cities
