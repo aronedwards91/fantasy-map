@@ -138,8 +138,8 @@
 // Map Data
 $(function () {
   const factionData = {
-    picatun: {
-      name: "Picatun",
+    fierfolc: {
+      name: "Fierfolc",
       color: "#58A540",
       colorHover: "#429229",
     },
@@ -216,12 +216,12 @@ $(function () {
       fill: factionData.kairn.colorHover,
     },
   };
-  const picatunColors = {
+  const fierfolcColors = {
     attrs: {
-      fill: factionData.picatun.color,
+      fill: factionData.fierfolc.color,
     },
     attrsHover: {
-      fill: factionData.picatun.colorHover,
+      fill: factionData.fierfolc.colorHover,
     },
   };
   const dormumColors = {
@@ -292,18 +292,18 @@ $(function () {
     Babukheb: new District(
       "Babukheb",
       morajiinColors,
-      "Snaking deep canyons, rich plains & cliffs near sea, Islands with temple complexes, many morajiin ports."
+      "Snaking deep canyons, rich plains & cliffs near sea, Islands with temple complexes, many morajiin ports"
     ),
     Yamuthon: new District(
       "Yamuthon",
       morajiinColors,
       "Strongly seasonal moving between dry plains and rich wetland, Many rich Morajiin cities on seashore"
     ),
-    // Picatun
+    // Fierfolc
     Rowdburn: new District(
       "Rowdburn",
-      picatunColors,
-      "Home to the wetland plain & cold forest, temperate, held by Picatun ."
+      fierfolcColors,
+      "Home to the wetland plain & cold forest, temperate, held by Fierfolc"
     ),
     // Nelomica
     TepecXi: new District(
@@ -611,7 +611,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Grevon",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-11": {
         text: {
@@ -622,7 +622,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Ciburford",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-12": {
         text: {
@@ -791,7 +791,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Gamn Dow",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-29": {
         text: {
@@ -802,7 +802,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Ruust-Carl",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-30": {
         text: {
@@ -845,7 +845,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Getrebly",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-35": {
         text: {
@@ -856,7 +856,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Hagon",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-36": {
         text: {
@@ -867,7 +867,7 @@ $(function () {
         tooltip: {
           content: "<b>District:</b> Faelaports",
         },
-        ...picatunColors,
+        ...fierfolcColors,
       },
       "area-37": {
         text: {
@@ -976,20 +976,20 @@ $(function () {
     // Add some plots on the map
     plots: {
       // Groups
-      picatun: {
+      fierfolc: {
         x: 150,
         y: 218,
         ...groupPlotDefault,
         width: 15,
         text: {
           attrs: { "font-size": 17 },
-          content: "Picatun Clans",
+          content: "Fierfolc Clans",
           position: "bottom",
         },
-        url: "/public/icons/picatun-banner.svg",
+        url: "/public/icons/fierfolc-banner.svg",
         eventHandlers: {
           click: function () {
-            getEntry("Picatun", "groups");
+            getEntry("Fierfolc", "groups");
           },
         },
       },
@@ -1037,8 +1037,8 @@ $(function () {
         },
       },
       ridokin: {
-        x: 242,
-        y: 80,
+        x: 240,
+        y: 82,
         ...groupPlotDefault,
         text: {
           attrs: { "font-size": 12 },
