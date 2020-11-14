@@ -256,15 +256,24 @@ $(function () {
     type: "image",
     cssClass: "group",
   };
+  const fortPlotDefault = {
+    value: 2,
+    size: 0,
+    width: 6,
+    height: 5,
+    type: "image",
+    cssClass: "fort",
+    attrs: {
+      opacity: 1,
+    },
+  };
 
   function District(name, colors, info) {
     this.name = name;
     this.areaData = {
       ...colors,
       eventHandlers: {
-        click: function () {
-          getEntry(name.replace(" ", "-"), "district");
-        },
+        click: (e) => getEntry(name.replace(" ", "-"), "district", e),
       },
       tooltip: {
         content: `<b>District:</b> <span>${name}</span> <div>${info}</div>`,
@@ -304,6 +313,41 @@ $(function () {
       "Rowdburn",
       fierfolcColors,
       "Home to the wetland plain & cold forest, temperate, held by Fierfolc"
+    ),
+    GamnDow: new District(
+      "Gamn Dow",
+      fierfolcColors,
+      "Criss-crossed by rivers, this vast marsh forested floodplain is rich with fauna"
+    ),
+    Hagon: new District(
+      "Hagon Isles",
+      fierfolcColors,
+      "Largely barren mountainous tundra speckled with Spirit stones & winding caves"
+    ),
+    Grevon: new District(
+      "Grevon",
+      fierfolcColors,
+      "Home of the great cattle plains, rich land offers farming but cruel winters keep away all but the hardiest"
+    ),
+    Ciburford: new District(
+      "Ciburford",
+      fierfolcColors,
+      "Home of the the Great Aldwud, the ancient never ending forest canopy, a few old tribes hide away here"
+    ),
+    Getrebly: new District(
+      "Getrebly",
+      fierfolcColors,
+      "The Home fort, winding rivers & rich valleys paint the beautiful Fierfloc Capital"
+    ),
+    Faelaports: new District(
+      "Faelaports",
+      fierfolcColors,
+      "Scattered islands offering sparse farming, & rough seas guard an idealic warm climate"
+    ),
+    RuustCarl: new District(
+      "Ruust-Carl",
+      fierfolcColors,
+      "The misty stonevalley rainforests hide a dangerous but rich array of fauna."
     ),
     // Nelomica
     TepecXi: new District(
@@ -431,7 +475,9 @@ $(function () {
   }
   window.topicExpandToggleAction = topicExpandToggleAction;
 
-  function getEntry(name, type) {
+  function getEntry(name, type, e) {
+    console.log("e", name);
+    e.stopPropagation();
     const SidebarEl = document.getElementById(sidebarId);
     removeAllChildNodes(SidebarEl);
 
@@ -468,7 +514,8 @@ $(function () {
         removeAllChildNodes(SidebarEl);
         SidebarEl.appendChild(NewEntryElement);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error("err", err);
         removeAllChildNodes(SidebarEl);
         const NoResult = document.createElement("h4");
         NoResult.innerHTML = "The Codex remains silent on this matter..";
@@ -604,25 +651,19 @@ $(function () {
       },
       "area-10": {
         text: {
-          content: "Grevon",
+          content: districtsData.Grevon.name,
           attrs: { "font-size": 5 },
           margin: { x: 2, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Grevon",
-        },
-        ...fierfolcColors,
+        ...districtsData.Grevon.areaData,
       },
       "area-11": {
         text: {
-          content: "Ciburford",
+          content: districtsData.Ciburford.name,
           attrs: { "font-size": 5 },
           margin: { x: 4, y: 7 },
         },
-        tooltip: {
-          content: "<b>District:</b> Ciburford",
-        },
-        ...fierfolcColors,
+        ...districtsData.Ciburford.areaData,
       },
       "area-12": {
         text: {
@@ -784,25 +825,19 @@ $(function () {
       },
       "area-28": {
         text: {
-          content: "Gamn Dow",
+          content: districtsData.GamnDow.name,
           attrs: { "font-size": 4.6 },
           margin: { x: -5.5, y: -4.5 },
         },
-        tooltip: {
-          content: "<b>District:</b> Gamn Dow",
-        },
-        ...fierfolcColors,
+        ...districtsData.GamnDow.areaData,
       },
       "area-29": {
         text: {
-          content: "Ruust-Carl",
+          content: districtsData.RuustCarl.name,
           attrs: { "font-size": 5 },
           margin: { x: 7, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Ruust-Carl",
-        },
-        ...fierfolcColors,
+        ...districtsData.RuustCarl.areaData,
       },
       "area-30": {
         text: {
@@ -838,36 +873,27 @@ $(function () {
       },
       "area-34": {
         text: {
-          content: "Getrebly",
+          content: districtsData.Getrebly.name,
           attrs: { "font-size": 5 },
           margin: { x: 15.5, y: 7 },
         },
-        tooltip: {
-          content: "<b>District:</b> Getrebly",
-        },
-        ...fierfolcColors,
+        ...districtsData.Getrebly.areaData,
       },
       "area-35": {
         text: {
-          content: "Hagon",
+          content: districtsData.Hagon.name,
           attrs: { "font-size": 5 },
-          margin: { x: 2, y: 22 },
+          margin: { x: 2, y: 27 },
         },
-        tooltip: {
-          content: "<b>District:</b> Hagon",
-        },
-        ...fierfolcColors,
+        ...districtsData.Hagon.areaData,
       },
       "area-36": {
         text: {
-          content: "Faelaports",
+          content: districtsData.Faelaports.name,
           attrs: { "font-size": 5 },
           margin: { x: 7, y: -8 },
         },
-        tooltip: {
-          content: "<b>District:</b> Faelaports",
-        },
-        ...fierfolcColors,
+        ...districtsData.Faelaports.areaData,
       },
       "area-37": {
         text: {
@@ -987,11 +1013,6 @@ $(function () {
           position: "bottom",
         },
         url: "/public/icons/fierfolc-banner.svg",
-        eventHandlers: {
-          click: function () {
-            getEntry("Fierfolc", "groups");
-          },
-        },
       },
       dormum: {
         x: 70,
@@ -1003,11 +1024,6 @@ $(function () {
           position: "bottom",
         },
         url: "/public/icons/dormum-banner.svg",
-        eventHandlers: {
-          click: function () {
-            getEntry("Dormum", "groups");
-          },
-        },
       },
       nelomica: {
         value: 5,
@@ -1030,11 +1046,6 @@ $(function () {
           position: "bottom",
         },
         url: "/public/icons/morajiin-banner.svg",
-        eventHandlers: {
-          click: function () {
-            getEntry("Morajiin", "groups");
-          },
-        },
       },
       ridokin: {
         x: 240,
@@ -1082,9 +1093,25 @@ $(function () {
           position: "bottom",
         },
       },
-      // Cities
+      // Forts
+      fierfolcFRedwater: {
+        x: 156,
+        y: 204,
+        ...fortPlotDefault,
+        width: 10,
+        url: "/public/icons/forts/fierfolc-fort.svg",
+        tooltip: {
+          content: "Fierfolc:<b> Castle Redwater</b>",
+        },
+        eventHandlers: {
+          click: (e) => getEntry("redwater", "fort", e),
+        },
+      },
     },
   });
+
+  var maprootId = "maproot";
+  var fortHideClass = "hideforts";
 
   const zoomOptHideBig = {
     animDuration: 300,
@@ -1099,6 +1126,9 @@ $(function () {
         max: 2,
       },
     },
+    afterShowRange: () => {
+      document.getElementById(maprootId).classList.add(fortHideClass);
+    },
   };
   const zoomOptShowBig = {
     animDuration: 300,
@@ -1109,7 +1139,12 @@ $(function () {
         max: 2,
       },
     },
+    afterShowRange: () => {
+      document.getElementById(maprootId).classList.remove(fortHideClass);
+    },
   };
+
+  $(".mapcontainer").trigger("showElementsInRange", [zoomOptHideBig]);
 
   $(".map").on("afterZoom", function () {
     const zoomLevel = jQuery(".mapcontainer").data("mapael").zoomData.zoomLevel;

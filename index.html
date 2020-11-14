@@ -91,6 +91,9 @@
       [data-type="area"] {
         stroke-width: 0.3;
       }
+      #maproot.hideforts image.fort {
+        display: none;
+      }
 
       /* For all zoom buttons */
       .mapael .zoomButton {
@@ -260,7 +263,7 @@
     </div>
     <div class="map-flex">
       <div class="map-section">
-        <div class="mapcontainer">
+        <div class="mapcontainer" id="maproot">
           <div class="map">
             <div class="spinner"></div>
           </div>
