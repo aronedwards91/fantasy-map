@@ -560,7 +560,7 @@ $(function () {
     spinner.classList.add("spinner");
     SidebarEl.appendChild(spinner);
 
-    const url = `/naapi/${type}/${name}.json`;
+    const url = `/library/${type}/${name}.json`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {

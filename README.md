@@ -1,6 +1,7 @@
 ## To Do
 
-- test icons
-- rename picatun
-- fill tooltips
-- high text icons - test interaction
+- Add cities
+- Race List Home
+- Breadcrumbs wiki
+- city tooltips
+- block out entries
