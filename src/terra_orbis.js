@@ -312,7 +312,7 @@ $(function () {
     Rowdburn: new District(
       "Rowdburn",
       fierfolcColors,
-      "Home to the wetland plain & cold forest, temperate, held by Fierfolc"
+      "Home to the wetland plain & cold forest, some burnt forest, temperate, held by Fierfolc"
     ),
     GamnDow: new District(
       "Gamn Dow",
@@ -396,11 +396,86 @@ $(function () {
       dormumColors,
       "Mediterranean islands, rough waters, heavy fishing, Dormum Sea Fortress & food provision."
     ),
+    Praetorium: new District(
+      "Praetorium Ganae",
+      dormumColors,
+      "Largely desert, salt flats & scrubland, oasis and some nomadic tribes, mostly Dormum outpost"
+    ),
+    Vinocana: new District(
+      "Vinocana",
+      dormumColors,
+      "Mostly burnt ashland, many giant bones remains of the giganamos, some very fertile soil"
+    ),
+    AraeTocco: new District(
+      "Arae Tocco",
+      dormumColors,
+      "A mix of dry desert and rich rivers, many old temples and forts"
+    ),
+    AquaeRigo: new District(
+      "Aquae Rigo",
+      dormumColors,
+      "The sanguine Gorge, deep caverns and the occasional Wadi, home to the dry forests"
+    ),
+    CastellumNovio: new District(
+      "Castellum Novio",
+      dormumColors,
+      "The great hunter's savannah, many forts mark out the imperial hunting preserve"
+    ),
+    Tarragacco: new District(
+      "Tarragacco",
+      dormumColors,
+      "Dormum's Argicultural home, the verdant grasslands are painted with rich farmland"
+    ),
+    Vinni: new District(
+      "Vinni",
+      dormumColors,
+      "Vinni's winding crags hide ancient forests, flowing to rich lake bays & fishing"
+    ),
+    Floren: new District(
+      "Floren",
+      dormumColors,
+      "A lush mountainous paradise, home to elite baracks and the finest Dormum Shipyards"
+    ),
+    Fletiscum: new District(
+      "Fletiscum",
+      dormumColors,
+      "Mostly Alpine Steppe's, with smatterings of meadows & fertile soil, hosts many great caverns"
+    ),
+    Lucus: new District(
+      "Lucus",
+      dormumColors,
+      "Shard mountains are a hostbed of rain, filling it's many jungle covered ponds"
+    ),
+    ReggioDinali: new District(
+      "Reggio Dinali",
+      dormumColors,
+      "The great green hills, host Dormum's lavish capitol, fed by thin snaking gullies"
+    ),
+    Batavorro: new District(
+      "Batavorro",
+      dormumColors,
+      "The twin volcanoes of Doreii & Calceii guard rich mineral veins and hard obsidian"
+    ),
+    AquilLivii: new District(
+      "Aquil Livii",
+      dormumColors,
+      "large stone cliffs, guard rich moss forests, and east shore wide bays for many fishing villages"
+    ),
+    PonsMar: new District(
+      "Pons Mar",
+      dormumColors,
+      "A lush valley, home to many giant sprawling Oak clusters, troublesome due to it's unique weather"
+    ),
+    Ascrivi: new District(
+      "Ascrivi",
+      dormumColors,
+      "Between the great rock columns hide the thorn forests & glittering rivers, Dormum keep to the rich shore"
+    ),
     // Kairn
     Flaw: new District(
       "Flaw",
       kairnColors,
-      "Tundra, Scrubland, hunting grounds, Kairn Outputs & villages"
+      "Tundra, Scrubland, hunting grounds & crystal forests. Many Kairn Outputs & fishing villages"
     ),
     Wintertuithe: new District(
       "Wintertuithe",
@@ -618,36 +693,27 @@ $(function () {
       },
       "area-7": {
         text: {
-          content: "Vinocana",
+          content: districtsData.Vinocana.name,
           attrs: { "font-size": 5 },
           margin: { x: -2, y: -11 },
         },
-        tooltip: {
-          content: "<b>District:</b> Vinocana",
-        },
-        ...dormumColors,
+        ...districtsData.Vinocana.areaData,
       },
       "area-8": {
         text: {
-          content: "Ascrivi",
+          content: districtsData.Ascrivi.name,
           attrs: { "font-size": 5 },
           margin: { x: -1, y: -10 },
         },
-        tooltip: {
-          content: "<b>District:</b> Ascrivi",
-        },
-        ...dormumColors,
+        ...districtsData.Ascrivi.areaData,
       },
       "area-9": {
         text: {
-          content: "Batavorro",
+          content: districtsData.Batavorro.name,
           attrs: { "font-size": 5 },
           margin: { x: 4, y: 2 },
         },
-        tooltip: {
-          content: "<b>District:</b> Batavorro",
-        },
-        ...dormumColors,
+        ...districtsData.Batavorro.areaData,
       },
       "area-10": {
         text: {
@@ -667,80 +733,59 @@ $(function () {
       },
       "area-12": {
         text: {
-          content: "Floren",
+          content: districtsData.Floren.name,
           attrs: { "font-size": 5 },
           margin: { x: 2, y: -1 },
         },
-        tooltip: {
-          content: "<b>District:</b> Floren",
-        },
-        ...dormumColors,
+        ...districtsData.Floren.areaData,
       },
       "area-13": {
         text: {
-          content: "Lucus",
+          content: districtsData.Lucus.name,
           attrs: { "font-size": 5 },
           margin: { x: 2, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Lucus",
-        },
-        ...dormumColors,
+        ...districtsData.Lucus.areaData,
       },
       "area-14": {
         text: {
-          content: "Fletiscum",
+          content: districtsData.Fletiscum.name,
           attrs: { "font-size": 5 },
           margin: { x: -2, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Fletiscum",
-        },
-        ...dormumColors,
+        ...districtsData.Fletiscum.areaData,
       },
       "area-15": {
         text: {
-          content: "Pons-Mar",
+          content: districtsData.PonsMar.name,
           attrs: { "font-size": 4.2 },
           margin: { x: -4, y: -5 },
         },
-        tooltip: {
-          content: "<b>District:</b> Pons-Mar",
-        },
-        ...dormumColors,
+        ...districtsData.PonsMar.areaData,
       },
       "area-16": {
         text: {
-          content: "Tarragacco",
+          content: districtsData.Tarragacco.name,
           attrs: { "font-size": 5 },
           margin: { x: -1, y: 1 },
         },
-        tooltip: {
-          content: "<b>District:</b> Tarragacco",
-        },
-        ...dormumColors,
+        ...districtsData.Tarragacco.areaData,
       },
       "area-17": {
         text: {
-          content: "Vinni",
+          content: districtsData.Vinni.name,
           attrs: { "font-size": 5 },
           margin: { x: -1, y: -6 },
         },
-        tooltip: {
-          content: "<b>District:</b> Vinni",
-        },
-        ...dormumColors,
+        ...districtsData.Vinni.areaData,
       },
       "area-18": {
         text: {
-          content: "Reggio Dinali",
+          content: districtsData.ReggioDinali.name,
           attrs: { "font-size": 5 },
           margin: { x: -1, y: 0 },
         },
-        tooltip: {
-          content: "<b>District:</b> Reggio Dinali",
-        },
-        ...dormumColors,
+        ...districtsData.ReggioDinali.areaData,
       },
       "area-19": {
         text: {
@@ -760,36 +805,27 @@ $(function () {
       },
       "area-21": {
         text: {
-          content: "Aquae Rigo",
+          content: districtsData.AquaeRigo.name,
           attrs: { "font-size": 4.2 },
           margin: { x: 0, y: -7 },
         },
-        tooltip: {
-          content: "<b>District:</b> Aquae Rigo",
-        },
-        ...dormumColors,
+        ...districtsData.AquaeRigo.areaData,
       },
       "area-22": {
         text: {
-          content: "Castellum Novio",
+          content: districtsData.CastellumNovio.name,
           attrs: { "font-size": 5 },
           margin: { x: 0, y: 1 },
         },
-        tooltip: {
-          content: "<b>District:</b> Castellum Novio",
-        },
-        ...dormumColors,
+        ...districtsData.CastellumNovio.areaData,
       },
       "area-23": {
         text: {
-          content: "Arae Tocco",
+          content: districtsData.AraeTocco.name,
           attrs: { "font-size": 5 },
           margin: { x: 0, y: 2 },
         },
-        tooltip: {
-          content: "<b>District:</b> Arae Tocco",
-        },
-        ...dormumColors,
+        ...districtsData.AraeTocco.areaData,
       },
       "area-24": {
         text: {
@@ -905,25 +941,19 @@ $(function () {
       },
       "area-38": {
         text: {
-          content: "Praetorium Ganae",
+          content: districtsData.Praetorium.name,
           attrs: { "font-size": 4.2 },
           margin: { x: 1.8, y: -7.5 },
         },
-        tooltip: {
-          content: "<b>District:</b> Praetorium Ganae",
-        },
-        ...dormumColors,
+        ...districtsData.Praetorium.areaData,
       },
       "area-39": {
         text: {
-          content: "Aquil Livii",
+          content: districtsData.AquilLivii.name,
           attrs: { "font-size": 4.2 },
           margin: { x: 1, y: 3 },
         },
-        tooltip: {
-          content: "<b>District:</b> Aquil Livii",
-        },
-        ...dormumColors,
+        ...districtsData.AquilLivii.areaData,
       },
       "area-40": {
         text: {
