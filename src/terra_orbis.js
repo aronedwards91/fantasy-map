@@ -1104,7 +1104,7 @@ $(function () {
         ...groupPlotDefault,
         width: 15,
         height: 15,
-        url: "/public/icons/orkkish-banner.svg",
+        url: "/public/icons/orkkin-banner.svg",
         text: {
           attrs: { "font-size": 12 },
           content: "Orkkin Tribes",

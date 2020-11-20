@@ -205,7 +205,27 @@
         justify-content: space-around;
         cursor: pointer;
       }
-
+      .faction-list {
+        list-style-type: none;
+        padding-inline-start: 0;
+        padding: 0 10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .faction-list > li {
+        flex: 0 1 46%;
+        padding: 0 2%;
+      }
+      .faction-list img {
+        max-width: 120px;
+        max-height: 100px;
+        margin-right: 20px;
+      }
+      .flex-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       /* Spinner */
       .spinner {
         width: 40px;
@@ -283,8 +303,86 @@
               from wastefull violence and trouble, the world already providing
               enough of those itself.
             </p>
-            <h3>The Factions</h3>
+            <h3>The Factions of Order</h3>
             <p>The seven civilizations hold the vast quantity of land</p>
+            <ul class="faction-list">
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/nelomica-banner.svg" alt="icon" />
+                  <h3>Nelomica</h3>
+                </div>
+                <p>A heavily ritualistic race,</p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/dormum-banner.svg" alt="icon" />
+                  <h3>Dormum</h3>
+                </div>
+                <p>The most populous & powerful Empire</p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/fierfolc-banner.svg" alt="icon" />
+                  <h3>Fierfloc</h3>
+                </div>
+                <p>
+                  A Huge tribal group, at odds amongst each other as often as
+                  anything else.
+                </p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/morajiin-banner.svg" alt="icon" />
+                  <h3>Morajiin</h3>
+                </div>
+                <p>
+                  A mix of nomads and rich cities, holds the desert, their
+                  trades pass to all lands.
+                </p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/ridokin-banner.svg" alt="icon" />
+                  <h3>Ridokin</h3>
+                </div>
+                <p>A largely pacifist monastic brotherhood.</p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/kairn-banner.svg" alt="icon" />
+                  <h3>Kairn</h3>
+                </div>
+                <p>The brutish, hairy and huge peoples of the cold south.</p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="" alt="icon" />
+                  <h3>Dwarves</h3>
+                </div>
+                <p>The cave dwelling peoples of the dark.</p>
+              </li>
+            </ul>
+            <h3>The Factions of Chaos</h3>
+            <p>
+              Spread throughout the land these peoples, whilst less populous
+              command no smaller mark upon the movements of history
+            </p>
+            <ul class="faction-list">
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/naga-banner.svg" alt="icon" />
+                  <h3>Naga</h3>
+                </div>
+                <p>Snakebodied fire worshippers</p>
+              </li>
+              <li>
+                <div class="flex-center">
+                  <img src="public/icons/orkkin-banner.svg" alt="icon" />
+                  <h3>Orkkin</h3>
+                </div>
+                <p>The ferocious nomads of the plains</p>
+              </li>
+            </ul>
           </div>
           <div class="bar-bg"></div>
         </div>
