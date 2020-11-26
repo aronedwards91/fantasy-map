@@ -586,6 +586,7 @@ $(function () {
     setSidebar(url, event);
   }
   function setSidebar(url, event) {
+    console.log(">>>>url", url);
     event.stopPropagation();
     const SidebarEl = document.getElementById(sidebarId);
     removeAllChildNodes(SidebarEl);
@@ -602,7 +603,6 @@ $(function () {
           "<p class='breadcrumb'><a onclick='window.utilities.sidebarHome();'>Home</a>";
         if (data.breadcrumb) {
           Object.keys(data.breadcrumb).forEach((key) => {
-            console.log(">>>>item", data.breadcrumb[key]);
             breadcrumb += `<span>&gt;</span><a onclick="window.utilities.getEntryByLink('${data.breadcrumb[key]}', event)">${key}</a>`;
           });
         }

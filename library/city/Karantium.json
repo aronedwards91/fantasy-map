@@ -1,0 +1,19 @@
+{
+    "title": "Karantium",
+    "subtitle": "The Palace of Deptin",
+    "logo": "public/icons/cities/city-dormum.svg",
+    "breadcrumb": {
+      "Fierfolc": "groups/dormum",
+      "Gamn Dow": "district/Modicium"
+    },
+    "topics": {
+      "history": ["h4", "Construction", "p", "The northen islands of ...."],
+      "Places of Note": [
+        "h4",
+        "The Burning Tower",
+        "p",
+        "Dormum's second greatest lighthouse and saviour of many a fishermen in her rough seas."
+      ]
+    }
+  }
+  
