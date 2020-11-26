@@ -1,6 +1,8 @@
 {
   "title": "Rowdburn",
   "subtitle": "The lost woods",
+  "breadcrumb": 
+    {"Group: Fierfolc": "/groups/fierfolc"},
   "topics": {
     "Geography": [
       "h4",

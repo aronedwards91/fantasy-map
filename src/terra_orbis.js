@@ -1048,6 +1048,7 @@ $(function () {
         x: 70,
         y: 136,
         ...groupPlotDefault,
+        width: 25,
         text: {
           attrs: { "font-size": 17 },
           content: "Dormum Empire",

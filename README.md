@@ -1,7 +1,8 @@
 ## To Do
 
-- Race List Home
-- Add cities
+- complete banners
+- Race List Home - link
 - Breadcrumbs wiki
+- Add cities
 - city tooltips
 - block out entries
