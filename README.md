@@ -1,6 +1,5 @@
 ## To Do
 
-- Race List Home - link
 - Breadcrumbs wiki
 - list topics for groups
 - list topics for cities, districts, forts

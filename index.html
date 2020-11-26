@@ -17,16 +17,39 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"
       charset="utf-8"
     ></script>
+    <script>
+      window.utilities = {}; // place global functions here
+
+      (function () {
+        var sidebarId = "info-sidebar";
+        var initalPageId = "inital-page-info";
+
+        function removeAllChildNodes(parent) {
+          while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+          }
+        }
+
+        function cloneNodeAll(nodeId, appendId) {
+          var myDiv = document.getElementById(nodeId);
+          var divClone = myDiv.cloneNode(true);
+          divClone.id = nodeId + "-clone";
+          document.getElementById(appendId).appendChild(divClone);
+        }
+        function sidebarHome() {
+          window.utilities.removeAllChildNodes(
+            document.getElementById(sidebarId)
+          );
+          cloneNodeAll(initalPageId, sidebarId);
+        }
+
+        window.utilities.removeAllChildNodes = removeAllChildNodes;
+        window.utilities.cloneNodeAll = cloneNodeAll;
+        window.utilities.sidebarHome = sidebarHome;
+      })();
+    </script>
     <script src="./src/jquery.mapael.min.js" charset="utf-8"></script>
     <script src="./src/terra_orbis.js" charset="utf-8"></script>
-    <script>
-      function cloneNodeAll(nodeId, appendId) {
-        var myDiv = document.getElementById(nodeId);
-        var divClone = myDiv.cloneNode(true);
-        divClone.id = nodeId + "-clone";
-        document.getElementById(appendId).appendChild(divClone);
-      }
-    </script>
   </head>
 
   <body>
@@ -68,7 +91,7 @@
           <li>
             <div
               class="flex-center onclick"
-              onclick="window.utilities.getEntry('fierfloc','groups',event)"
+              onclick="window.utilities.getEntry('fierfolc','groups',event)"
             >
               <img src="public/icons/fierfolc-banner.svg" alt="icon" />
               <h3>Fierfloc</h3>
@@ -184,7 +207,7 @@
           <li>
             <div
               class="flex-center onclick"
-              onclick="window.utilities.getEntry('redFurs','groups',event)"
+              onclick="window.utilities.getEntry('redfurs','groups',event)"
             >
               <img src="public/icons/redfur-banner.svg" alt="icon" />
               <h3>RedFurs</h3>
@@ -220,7 +243,7 @@
           <div class="bar-bg"></div>
           <div id="info-sidebar"></div>
           <script>
-            window.cloneNodeAll("inital-page-info", "info-sidebar");
+            window.utilities.sidebarHome();
           </script>
           <div class="bar-bg"></div>
         </div>

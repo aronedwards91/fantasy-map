@@ -20,7 +20,6 @@
   }
 })(function ($, Mapael) {
   "use strict";
-  window.utilities = {}; // place global functions here
 
   $.extend(true, Mapael, {
     maps: {
@@ -532,12 +531,7 @@ $(function () {
       "Hot desert, few oasis, Naga stronghold, many fire temples"
     ),
   };
-
-  function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
-    }
-  }
+  removeAllChildNodes = window.utilities.removeAllChildNodes;
 
   const sidebarId = "info-sidebar";
 
@@ -552,7 +546,14 @@ $(function () {
   window.topicExpandToggleAction = topicExpandToggleAction;
 
   function getEntry(name, type, event) {
-    console.log("event:>", event);
+    const url = `/library/${type}/${name}.json`;
+    setSidebar(url, event);
+  }
+  function getEntryByLink(link, event) {
+    const url = `/library/${link}.json`;
+    setSidebar(url, event);
+  }
+  function setSidebar(url, event) {
     console.log("page:>", name);
     event.stopPropagation();
     const SidebarEl = document.getElementById(sidebarId);
@@ -562,12 +563,20 @@ $(function () {
     spinner.classList.add("spinner");
     SidebarEl.appendChild(spinner);
 
-    const url = `/library/${type}/${name}.json`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         const NewEntryElement = document.createElement("div");
-        let innerHTML = `<h2>${data.title}</h2><p>${data.subtitle}</p>`;
+        let breadcrumb =
+          "<p class='breadcrumb'><a onclick='window.utilities.sidebarHome();'>Home</a>";
+        if (data.breadcrumb) {
+          Object.keys(data.breadcrumb).forEach((key) => {
+            console.log(">>>>item", data.breadcrumb[key]);
+            breadcrumb += `<span>&gt;</span><a onclick="window.utilities.getEntryByLink('${data.breadcrumb[key]}', event)">${key}</a>`;
+          });
+        }
+        breadcrumb += "</p>";
+        let innerHTML = `${breadcrumb}<p></p><h2>${data.title}</h2><p>${data.subtitle}</p>`;
 
         const topicsHtml = Object.keys(data.topics).map((key, topicIndex) => {
           const topicID = `topic-${key}`;
@@ -599,6 +608,7 @@ $(function () {
         SidebarEl.appendChild(NoResult);
       });
   }
+  window.utilities.getEntryByLink = getEntryByLink;
   window.utilities.getEntry = getEntry;
 
   $(".mapcontainer").mapael({

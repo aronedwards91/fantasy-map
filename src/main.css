@@ -226,6 +226,18 @@ h1 {
 .onclick {
   cursor: pointer;
 }
+.breadcrumb span,
+.breadcrumb a {
+  margin-right: 4px;
+}
+.breadcrumb a {
+  cursor: pointer;
+  color: #2f3d3a;
+  transition: color 0.3s ease-in-out;
+}
+.breadcrumb a:hover {
+  color: #000000;
+}
 /* Spinner */
 .spinner {
   width: 40px;
