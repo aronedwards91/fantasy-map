@@ -1,5 +1,6 @@
 ## To Do
 
+- cities; dormum, ghast, elodhiir
 - Add cities
 - city tooltips
 - expand out entries

@@ -256,18 +256,6 @@ $(function () {
     type: "image",
     cssClass: "group",
   };
-  const fortPlotDefault = {
-    value: 2,
-    size: 0,
-    width: 6,
-    height: 5,
-    type: "image",
-    cssClass: "fort",
-    attrs: {
-      opacity: 1,
-    },
-  };
-
   function District(name, colors, info) {
     this.name = name;
     this.areaData = {
@@ -531,6 +519,50 @@ $(function () {
       "Hot desert, few oasis, Naga stronghold, many fire temples"
     ),
   };
+
+  const placePlotDefault = {
+    value: 2,
+    width: 6,
+    height: 5,
+    type: "image",
+    cssClass: "fort",
+    attrs: {
+      opacity: 1,
+    },
+  };
+  function City(name, info, url, x, y, width = 6) {
+    this.plotData = {
+      x,
+      y,
+      url,
+      value: 2,
+      width,
+      height: 5,
+      type: "image",
+      cssClass: "fort",
+      attrs: {
+        opacity: 1,
+      },
+      eventHandlers: {
+        click: (e) => getEntry(name.replace(" ", "-"), "city", e),
+      },
+      tooltip: {
+        content: `<b>${name}</b><span>(City)</span><div>${info}</div>`,
+      },
+    };
+  }
+  var DormumUrl = "public/icons/cities/city-dormum.svg";
+  const cityData = {
+    // Dormum
+    Karantium: new City(
+      "Karantium",
+      "The Great seaport, home to finest shipwrights & fishing vessels in the Empire.",
+      DormumUrl,
+      58,
+      122
+    ),
+  };
+
   removeAllChildNodes = window.utilities.removeAllChildNodes;
 
   const sidebarId = "info-sidebar";
@@ -1146,15 +1178,19 @@ $(function () {
       fierfolcFRedwater: {
         x: 156,
         y: 204,
-        ...fortPlotDefault,
+        ...placePlotDefault,
         width: 10,
-        url: "/public/icons/forts/fierfolc-fort.svg",
+        url: "/public/icons/cities/fierfolc-fort.svg",
         tooltip: {
           content: "Fierfolc:<b> Castle Redwater</b>",
         },
         eventHandlers: {
           click: (e) => getEntry("redwater", "fort", e),
         },
+      },
+      // cities
+      karantium: {
+        ...cityData.Karantium.plotData,
       },
     },
   });

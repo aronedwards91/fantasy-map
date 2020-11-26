@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="91.817mm" height="53.682mm" version="1.1" viewBox="0 0 91.817 53.682" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-71.708 -100.64)" stroke="#000">
+  <path d="m79.207 153.22h76.904v-35.397h6.9702l-36.391-16.084h-19.953l-34.566 16.028h7.0358z" fill="#fff" stroke-width="2.2"/>
+  <path d="m161.79 117.4-88.381-0.2015 33.93-15.462h19.353z" fill="#c7a65b" stroke-width="1.2"/>
+  <path d="m99.549 117.36 27.393-12.187 28.245 12.13" fill="none" stroke-width="1.2"/>
+  <path transform="matrix(.26458 0 0 .26458 57.092 102.71)" d="m148.15 162.12h-53.727c0.0041 14.16 0.41602 24.689 0.41602 24.689l53.928 0.10742s0.0585-10.587-0.61718-24.797z" fill="#68a6b6" stroke-width="4.5354"/>
+  <path transform="matrix(.26458 0 0 .26458 57.092 102.71)" d="m115.95 72.012c-18.849-1.682-21.527 55.928-21.518 90.104h53.727c-1.5974-33.596-7.8029-89.682-32.209-90.104z" fill="none" stroke-width="4.5354"/>
+  <rect x="102.35" y="145.32" width="51.231" height="7.7086" fill="#68a6b6" stroke-width="1.2"/>
+  <g fill="none" stroke-width="1.2">
+   <path d="m102.31 117.46v35.556"/>
+   <path d="m153.58 117.48v35.556"/>
+   <path d="m126.69 101.74-34.076 15.475 6.9364 0.14421v35.559"/>
+  </g>
+  <g fill="#c7a65b" stroke-width="1.2">
+   <rect x="102.47" y="122.54" width="4.6554" height="25.153"/>
+   <rect x="148.8" y="122.54" width="4.6554" height="25.153"/>
+   <rect x="126.04" y="122.54" width="4.6554" height="25.153"/>
+  </g>
+  <g fill="none" stroke-width="1.2">
+   <path d="m107.13 122.54 4.0573-5.1136"/>
+   <path d="m130.7 122.54 4.0573-5.1136"/>
+   <path d="m126.04 122.54-4.0573-5.1136"/>
+   <path d="m148.8 122.54-4.0573-5.1136"/>
+  </g>
+  <g fill="#fff" stroke-width="1.2">
+   <path transform="translate(57.092 102.71)" d="m50.034 44.99 4.305 5.3838-9.1479 0.0088 0.18753-5.3926z"/>
+   <path d="m126.04 147.7-4.3654 5.3915 13.369 0.0184-4.3479-5.4099z"/>
+   <path d="m153.58 153.03-0.12287-5.3374h-4.6554l-4.2905 5.3755z"/>
+  </g>
+ </g>
+</svg>
