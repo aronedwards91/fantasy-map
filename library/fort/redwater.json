@@ -1,7 +1,10 @@
 {
   "title": "Castle Redwater",
   "subtitle": "The Red watcher of Torr Mere",
-  "owner": "Fierfolc",
+  "breadcrumb": {
+    "Fierfolc": "groups/fierfolc",
+    "Gamn Dow": "district/Gamn-Dow"
+  },
   "topics": {
     "history": ["h4", "Construction", "p", "The northen islands of ...."],
     "Places of Note": [

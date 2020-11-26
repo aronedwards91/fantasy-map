@@ -1,0 +1,15 @@
+{
+  "title": "Gamn Dow",
+  "subtitle": "Field of many rivers",
+  "breadcrumb": 
+    {"Fierfolc": "groups/fierfolc"},
+  "topics": {
+    "Geography": ["h4", "River Crossed", "p", "Criss-crossed by rivers, this vast marsh forested floodplain is rich with fauna."],
+    "Places": [
+      "h5",
+      "Fort Redwater",
+      "p",
+      "'The Red watcher of Torr Mere', the main military fort in Gamn Dow."
+    ]
+  }
+}
