@@ -3,263 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Terra Orbis</title>
-    <style type="text/css">
-      :root {
-        --lighter: #92b06c;
-        --light: #6f8d48;
-        --mid: #52702b;
-        --dark: #3b5716;
-        --darker: #223805;
-      }
-      html {
-        margin: 0;
-        background: #b3c166;
-        color: var(--lighter);
-      }
-      body {
-        color: #5d5d5d;
-        font-family: "IM Fell English", Helvetica, Arial, sans-serif;
-        min-height: 100vh;
-        width: 100%;
-        margin: 0;
-        background: url("/public/brass-bg-lg.png");
-      }
-      h1 {
-        font-size: 30px;
-        margin: auto;
-        margin-top: 10px;
-      }
-
-      .container {
-        max-width: 800px;
-        margin: auto;
-      }
-
-      .map-flex {
-        display: flex;
-        margin: 0 auto;
-        max-width: 1300px;
-        border-left: 6px solid var(--dark);
-        border-right: 6px solid var(--dark);
-      }
-      .title-wrap {
-        height: 8vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .title {
-        font-size: 30px;
-        font-weight: bold;
-        padding: 0 30px;
-        border-left: 8px groove var(--dark);
-        border-right: 8px groove var(--dark);
-        color: black;
-      }
-      .map-section {
-        flex: 1 1 800px;
-        border: 1px solid var(--mid);
-        background: var(--dark);
-        max-width: 90vh;
-        padding: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .map-info {
-        flex: 0 1 300px;
-      }
-      .map-sidebar {
-        max-width: 100px;
-        border-left: 1px solid var(--mid);
-        background: var(--lighter);
-      }
-      /* Specific mapael css class are below
-         * 'mapael' class is added by plugin
-        */
-
-      .mapael .map {
-        position: relative;
-        cursor: pointer;
-        background: #9ab4c0;
-      }
-      .mapcontainer {
-        flex: 0 1 92%;
-        max-height: 90vh;
-        border: 1px solid var(--mid);
-      }
-      [data-type="area"] {
-        stroke-width: 0.3;
-      }
-      #maproot.hideforts image.fort {
-        display: none;
-      }
-
-      /* For all zoom buttons */
-      .mapael .zoomButton {
-        background-color: var(--light);
-        border: none;
-        color: #000;
-        width: 18px;
-        height: 18px;
-        line-height: 21px;
-        text-align: center;
-        border-radius: 3px;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        font-weight: bold;
-        left: 10px;
-
-        -webkit-transition: background-color 0.3 ease-in-out;
-        -ms-transition: background-color 0.3 ease-in-out;
-        transition: background-color 0.3 ease-in-out;
-
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-      }
-      .mapael .zoomButton:hover {
-        background-color: var(--mid);
-      }
-
-      /* Reset Zoom button first */
-      .mapael .zoomReset {
-        top: 10px;
-      }
-
-      /* Then Zoom In button */
-      .mapael .zoomIn {
-        top: 34px;
-      }
-
-      /* Then Zoom Out button */
-      .mapael .zoomOut {
-        top: 58px;
-      }
-
-      .mapael .mapTooltip {
-        position: absolute;
-        background: url("/public/tooltip-sm.png");
-        moz-opacity: 0.85;
-        opacity: 0.85;
-        filter: alpha(opacity=70);
-        border-radius: 10px;
-        padding: 10px;
-        z-index: 1000;
-        display: none;
-        height: 144px;
-        width: 158px;
-        color: black;
-        font-size: 18px;
-      }
-      .mapael .mapTooltip div {
-        margin-top: 4px;
-        font-size: 15.5px;
-      }
-      .mapael image[data-type="plot"].group,
-      .mapael text[data-type="plot-text"] {
-        pointer-events: none;
-      }
-
-      /* sidebar */
-      .info-wrap {
-        background: rgba(120, 120, 120, 0.5);
-        flex: 1;
-        padding: 10px 30px;
-        color: black;
-        border: 10px var(--mid) double;
-      }
-      .info-scroll {
-        overflow-y: scroll;
-        min-height: 84vh;
-        max-height: 84vh;
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-      .info-scroll::-webkit-scrollbar {
-        display: none;
-      }
-      .bar-bg {
-        height: 4px;
-        background: var(--dark);
-      }
-      .seperator {
-        height: 2px;
-        background: var(--mid);
-        margin: 10px 0;
-      }
-      .seperator-thin {
-        height: 1px;
-        background: var(--mid);
-        margin: 5px 0;
-      }
-      .topic[data-show="false"] {
-        height: 58px;
-        overflow: hidden;
-      }
-      .topic-title-row {
-        display: flex;
-        justify-content: space-around;
-        cursor: pointer;
-      }
-      .faction-list {
-        list-style-type: none;
-        padding-inline-start: 0;
-        padding: 0 10px;
-        display: flex;
-        flex-wrap: wrap;
-      }
-      .faction-list > li {
-        flex: 0 1 46%;
-        padding: 0 2%;
-      }
-      .faction-list img {
-        max-width: 120px;
-        max-height: 100px;
-        margin-right: 20px;
-      }
-      .flex-center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      /* Spinner */
-      .spinner {
-        width: 40px;
-        height: 40px;
-        margin: 100px auto;
-        background-color: #333;
-
-        border-radius: 100%;
-        -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-        animation: sk-scaleout 1s infinite ease-in-out;
-      }
-
-      @-webkit-keyframes sk-scaleout {
-        0% {
-          -webkit-transform: scale(0);
-        }
-        100% {
-          -webkit-transform: scale(1);
-          opacity: 0;
-        }
-      }
-
-      @keyframes sk-scaleout {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        100% {
-          -webkit-transform: scale(1);
-          transform: scale(1);
-          opacity: 0;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="src/main.css" />
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
@@ -275,9 +19,191 @@
     ></script>
     <script src="./src/jquery.mapael.min.js" charset="utf-8"></script>
     <script src="./src/terra_orbis.js" charset="utf-8"></script>
+    <script>
+      function cloneNodeAll(nodeId, appendId) {
+        var myDiv = document.getElementById(nodeId);
+        var divClone = myDiv.cloneNode(true);
+        divClone.id = nodeId + "-clone";
+        document.getElementById(appendId).appendChild(divClone);
+      }
+    </script>
   </head>
 
   <body>
+    <div class="hidden">
+      <div id="inital-page-info">
+        <h1 class="map-info">Codex Ellium - Terra Orbis - 455 ARB</h1>
+        <h3>A world in Flux</h3>
+        <p>
+          The world of Terra Orbis lies in a deep state of turmoil, multiple
+          factions slide between ever changing alliances each trying to ply
+          their hand, via war or diplomacy. Smaller city states hang in the
+          balance trying to placate their masters while isolating themselves
+          from wastefull violence and trouble, the world already providing
+          enough of those itself.
+        </p>
+        <h3>The Factions of Order</h3>
+        <p>The seven civilizations hold the vast quantity of land</p>
+        <ul class="faction-list">
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('nelomica','groups',event)"
+            >
+              <img src="public/icons/nelomica-banner.svg" alt="icon" />
+              <h3>Nelomica</h3>
+            </div>
+            <p>A heavily ritualistic race,</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('dormum','groups',event)"
+            >
+              <img src="public/icons/dormum-banner.svg" alt="icon" />
+              <h3>Dormum</h3>
+            </div>
+            <p>The most populous & powerful Empire</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('fierfloc','groups',event)"
+            >
+              <img src="public/icons/fierfolc-banner.svg" alt="icon" />
+              <h3>Fierfloc</h3>
+            </div>
+            <p>
+              A Huge tribal group, at odds amongst each other as often as
+              anything else.
+            </p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('morajiin','groups',event)"
+            >
+              <img src="public/icons/morajiin-banner.svg" alt="icon" />
+              <h3>Morajiin</h3>
+            </div>
+            <p>
+              A mix of nomads and rich cities, holds the desert, their trades
+              pass to all lands.
+            </p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('ridokin','groups',event)"
+            >
+              <img src="public/icons/ridokin-banner.svg" alt="icon" />
+              <h3>Ridokin</h3>
+            </div>
+            <p>A largely pacifist monastic brotherhood.</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('kairn','groups',event)"
+            >
+              <img src="public/icons/kairn-banner.svg" alt="icon" />
+              <h3>Kairn</h3>
+            </div>
+            <p>The brutish, hairy and huge peoples of the cold south.</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('dwarves','groups',event)"
+            >
+              <img src="public/icons/dwarven-banner.svg" alt="icon" />
+              <h3>Dwarves</h3>
+            </div>
+            <p>
+              The short and stocky craftsmen bringing light and beauty to the
+              deep.
+            </p>
+          </li>
+        </ul>
+        <h3>The Factions of Chaos</h3>
+        <p>
+          Spread throughout the land these peoples, whilst less populous command
+          no smaller mark upon the movements of history
+        </p>
+        <ul class="faction-list">
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('naga','groups',event)"
+            >
+              <img src="public/icons/naga-banner.svg" alt="icon" />
+              <h3>Naga</h3>
+            </div>
+            <p>Snakebodied fire worshippers</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('orkkin','groups',event)"
+            >
+              <img src="public/icons/orkkin-banner.svg" alt="icon" />
+              <h3>Orkkin</h3>
+            </div>
+            <p>The ferocious nomads of the plains</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('ghasts','groups',event)"
+            >
+              <img src="public/icons/forts/fort-ghast.svg" alt="icon" />
+              <h3>Ghasts</h3>
+            </div>
+            <p>The ghostly attendants of pain & death</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('hags','groups',event)"
+            >
+              <img src="public/icons/hag-banner.svg" alt="icon" />
+              <h3>Hags</h3>
+            </div>
+            <p>Accursed denizens of the foulest swamps</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('elodhiir','groups',event)"
+            >
+              <img src="public/icons/elodhiir-banner.svg" alt="icon" />
+              <h3>Elodhiir</h3>
+            </div>
+            <p>The immortal body capturing men of the ashlands</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('redFurs','groups',event)"
+            >
+              <img src="public/icons/redfur-banner.svg" alt="icon" />
+              <h3>RedFurs</h3>
+            </div>
+            <p>The pestilent skitterers of the darkest places below</p>
+          </li>
+          <li>
+            <div
+              class="flex-center onclick"
+              onclick="window.utilities.getEntry('prometheans','groups',event)"
+            >
+              <img src="public/icons/promethean-banner.svg" alt="icon" />
+              <h3>Prometheans</h3>
+            </div>
+            <p>The mysterious and hidden cult of the dark sciences</p>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="title-wrap">
       <div class="title">The world of Terra Orbis</div>
     </div>
@@ -292,133 +218,10 @@
       <div class="info-wrap">
         <div class="info-scroll">
           <div class="bar-bg"></div>
-          <div id="info-sidebar">
-            <h1 class="map-info">Codex Ellium - Terra Orbis - 455 ARB</h1>
-            <h3>A world in Flux</h3>
-            <p>
-              The world of Terra Orbis lies in a deep state of turmoil, multiple
-              factions slide between ever changing alliances each trying to ply
-              their hand, via war or diplomacy. Smaller city states hang in the
-              balance trying to placate their masters while isolating themselves
-              from wastefull violence and trouble, the world already providing
-              enough of those itself.
-            </p>
-            <h3>The Factions of Order</h3>
-            <p>The seven civilizations hold the vast quantity of land</p>
-            <ul class="faction-list">
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/nelomica-banner.svg" alt="icon" />
-                  <h3>Nelomica</h3>
-                </div>
-                <p>A heavily ritualistic race,</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/dormum-banner.svg" alt="icon" />
-                  <h3>Dormum</h3>
-                </div>
-                <p>The most populous & powerful Empire</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/fierfolc-banner.svg" alt="icon" />
-                  <h3>Fierfloc</h3>
-                </div>
-                <p>
-                  A Huge tribal group, at odds amongst each other as often as
-                  anything else.
-                </p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/morajiin-banner.svg" alt="icon" />
-                  <h3>Morajiin</h3>
-                </div>
-                <p>
-                  A mix of nomads and rich cities, holds the desert, their
-                  trades pass to all lands.
-                </p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/ridokin-banner.svg" alt="icon" />
-                  <h3>Ridokin</h3>
-                </div>
-                <p>A largely pacifist monastic brotherhood.</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/kairn-banner.svg" alt="icon" />
-                  <h3>Kairn</h3>
-                </div>
-                <p>The brutish, hairy and huge peoples of the cold south.</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/dwarven-banner.svg" alt="icon" />
-                  <h3>Dwarves</h3>
-                </div>
-                <p>The cave dwelling peoples of the dark.</p>
-              </li>
-            </ul>
-            <h3>The Factions of Chaos</h3>
-            <p>
-              Spread throughout the land these peoples, whilst less populous
-              command no smaller mark upon the movements of history
-            </p>
-            <ul class="faction-list">
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/naga-banner.svg" alt="icon" />
-                  <h3>Naga</h3>
-                </div>
-                <p>Snakebodied fire worshippers</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/orkkin-banner.svg" alt="icon" />
-                  <h3>Orkkin</h3>
-                </div>
-                <p>The ferocious nomads of the plains</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/forts/fort-ghast.svg" alt="icon" />
-                  <h3>Ghasts</h3>
-                </div>
-                <p>The ghostly attendants of pain & death</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/hag-banner.svg" alt="icon" />
-                  <h3>Hags</h3>
-                </div>
-                <p>Accursed denizens of the darkest swamps</p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/elodhiir-banner.svg" alt="icon" />
-                  <h3>Elodhiir</h3>
-                </div>
-                <p></p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/redfur-banner.svg" alt="icon" />
-                  <h3>RedFurs</h3>
-                </div>
-                <p></p>
-              </li>
-              <li>
-                <div class="flex-center">
-                  <img src="public/icons/promethean-banner.svg" alt="icon" />
-                  <h3>Prometheans</h3>
-                </div>
-                <p></p>
-              </li>
-            </ul>
-          </div>
+          <div id="info-sidebar"></div>
+          <script>
+            window.cloneNodeAll("inital-page-info", "info-sidebar");
+          </script>
           <div class="bar-bg"></div>
         </div>
       </div>

@@ -20,6 +20,7 @@
   }
 })(function ($, Mapael) {
   "use strict";
+  window.utilities = {}; // place global functions here
 
   $.extend(true, Mapael, {
     maps: {
@@ -550,9 +551,10 @@ $(function () {
   }
   window.topicExpandToggleAction = topicExpandToggleAction;
 
-  function getEntry(name, type, e) {
-    console.log("e", name);
-    e.stopPropagation();
+  function getEntry(name, type, event) {
+    console.log("event:>", event);
+    console.log("page:>", name);
+    event.stopPropagation();
     const SidebarEl = document.getElementById(sidebarId);
     removeAllChildNodes(SidebarEl);
 
@@ -574,7 +576,7 @@ $(function () {
             returnString += '<div class="seperator"></div>';
           }
           returnString += `<div class="topic" id="${topicID}" data-show="true">`;
-          returnString += `<div class="topic-title-row" onclick="topicExpandToggleAction('${topicID}')"><h3>${key}</h3><h3>+</h3></div><div class="seperator-thin"></div>`;
+          returnString += `<div class="topic-title-row" onclick="topicExpandToggleAction('${topicID}')"><h3>${key}</h3><h3>⬍</h3></div><div class="seperator-thin"></div>`;
           data.topics[key].map((arrItem, i, array) => {
             if (i % 2 === 0) {
               returnString += `<${arrItem}>${array[i + 1]}</${arrItem}>`;
@@ -597,6 +599,7 @@ $(function () {
         SidebarEl.appendChild(NoResult);
       });
   }
+  window.utilities.getEntry = getEntry;
 
   $(".mapcontainer").mapael({
     map: {
