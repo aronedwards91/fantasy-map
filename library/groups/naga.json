@@ -1,6 +1,7 @@
 {
   "title": "Naga",
   "subtitle": "Snakebodied fire worshippers",
+  "logo": "public/icons/naga-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

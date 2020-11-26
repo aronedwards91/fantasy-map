@@ -223,6 +223,11 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .onclick {
   cursor: pointer;
 }
@@ -237,6 +242,12 @@ h1 {
 }
 .breadcrumb a:hover {
   color: #000000;
+}
+img.sidebar-logo {
+  max-width: 40%;
+  max-height: 220px;
+  margin-left: 40px;
+  margin-bottom: 12px;
 }
 /* Spinner */
 .spinner {

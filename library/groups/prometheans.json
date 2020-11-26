@@ -1,6 +1,7 @@
 {
   "title": "Prometheans",
   "subtitle": "The mysterious and hidden cult of the dark sciences",
+  "logo": "public/icons/promethean-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

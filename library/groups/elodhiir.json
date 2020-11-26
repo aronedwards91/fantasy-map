@@ -1,6 +1,7 @@
 {
   "title": "Elodhiir",
   "subtitle": "The immortal body capturing men of the ashlands",
+  "logo": "public/icons/elodhiir-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

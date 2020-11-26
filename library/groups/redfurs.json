@@ -1,6 +1,7 @@
 {
   "title": "Redfurs",
   "subtitle": "The pestilent skitterers of the darkest places below",
+  "logo": "public/icons/redfur-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

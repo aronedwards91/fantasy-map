@@ -1,6 +1,7 @@
 {
     "title": "Ridokin",
     "subtitle": "A largely pacifist monastic brotherhood",
+    "logo": "public/icons/ridokin-banner.svg",
     "topics": {
       "Military": ["h4", "Armies", "p", " ...."]
     }

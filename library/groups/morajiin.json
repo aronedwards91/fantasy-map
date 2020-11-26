@@ -1,6 +1,7 @@
 {
     "title": "Morajiin",
     "subtitle": "A rich mix of city states and nomadic trading caravans",
+    "logo": "public/icons/morajiin-banner.svg",
     "topics": {
       "Military": ["h4", "Armies", "p", " ...."]
     }

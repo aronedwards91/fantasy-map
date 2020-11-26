@@ -554,7 +554,6 @@ $(function () {
     setSidebar(url, event);
   }
   function setSidebar(url, event) {
-    console.log("page:>", name);
     event.stopPropagation();
     const SidebarEl = document.getElementById(sidebarId);
     removeAllChildNodes(SidebarEl);
@@ -576,7 +575,13 @@ $(function () {
           });
         }
         breadcrumb += "</p>";
-        let innerHTML = `${breadcrumb}<p></p><h2>${data.title}</h2><p>${data.subtitle}</p>`;
+        let innerHTML = `${breadcrumb}<div class="flex-between"><div><h2>${
+          data.title
+        }</h2><p>${data.subtitle}</p></div>${
+          data.logo
+            ? "<img class='sidebar-logo' src='" + data.logo + "' />"
+            : ""
+        }</div>`;
 
         const topicsHtml = Object.keys(data.topics).map((key, topicIndex) => {
           const topicID = `topic-${key}`;

@@ -1,6 +1,7 @@
 {
   "title": "Hags",
   "subtitle": "Accursed denizens of the foulest swamps",
+  "logo": "public/icons/hag-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

@@ -1,6 +1,7 @@
 {
   "title": "Castle Redwater",
   "subtitle": "The Red watcher of Torr Mere",
+  "logo": "public/icons/forts/fierfolc-fort.svg",
   "breadcrumb": {
     "Fierfolc": "groups/fierfolc",
     "Gamn Dow": "district/Gamn-Dow"

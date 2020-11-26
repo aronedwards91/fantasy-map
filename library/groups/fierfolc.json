@@ -1,6 +1,7 @@
 {
   "title": "Fierfolc",
   "subtitle": "The Wild men of the woods",
+  "logo": "public/icons/fierfolc-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

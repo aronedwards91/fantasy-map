@@ -1,6 +1,7 @@
 {
   "title": "Nelomica",
   "subtitle": "Peoples of the Deepest jungle",
+  "logo": "public/icons/nelomica-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

@@ -1,6 +1,7 @@
 {
   "title": "ghasts",
   "subtitle": "The ghostly attendants of pain & death",
+  "logo": "public/icons/forts/fort-ghast.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }

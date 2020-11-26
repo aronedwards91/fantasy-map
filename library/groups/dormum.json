@@ -1,6 +1,7 @@
 {
   "title": "Dormum",
   "subtitle": "A powerful & prosperous empire",
+  "logo": "public/icons/dormum-banner.svg",
   "topics": {
     "Military": ["h4", "Armies", "p", " ...."]
   }
