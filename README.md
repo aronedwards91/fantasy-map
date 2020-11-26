@@ -1,18 +1,28 @@
 ## To Do
 
-- list topics for groups
-- list topics for cities, districts, forts
 - Add cities
 - city tooltips
-- block out entries
-
+- expand out entries
 
 ### Group Topics
 
-- 
+- culture
+- stats : Wealth, population, 
+- history
+- religion
+- magic
+- factions
+- Economy
+- Governance
 
-### cities Topics
+### cities/forts Topics
+
+- places
+- terrain
+- goods
+- Governance
 
 ### districts Topics
 
-### forts Topics
+- places
+- terrain
