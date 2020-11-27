@@ -32,7 +32,7 @@ h1 {
 .map-flex {
   display: flex;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: 1400px;
   border-left: 6px solid var(--dark);
   border-right: 6px solid var(--dark);
 }
@@ -51,7 +51,7 @@ h1 {
   color: black;
 }
 .map-section {
-  flex: 1 1 800px;
+  flex: 2 1 800px;
   border: 1px solid var(--mid);
   background: var(--dark);
   max-width: 90vh;
@@ -164,7 +164,7 @@ h1 {
 /* sidebar */
 .info-wrap {
   background: rgba(120, 120, 120, 0.5);
-  flex: 1;
+  flex: 1 1 600px;
   padding: 10px 30px;
   color: black;
   border: 10px var(--mid) double;
