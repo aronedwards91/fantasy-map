@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="281.84mm" height="295.95mm" version="1.1" viewBox="0 0 281.84 295.95" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <symbol id="g2392">
+   <path d="m38.509 271.02-0.92246-1.8204-0.06794 0.36661-0.6253-1.0097-0.26207 0.16391-0.87599-1.0256-0.45264 1.2846-0.46799-0.56423-1.1967 2.6046" fill="none" stroke="#000" stroke-width=".265" style="paint-order:normal"/>
+   <path d="m38.394 271.08-0.75455-1.4876-0.05039 0.33028-0.73834-1.1937-0.24323 0.16681-0.80124-0.94256 0.22963 1.0935 0.27409-0.16234 0.21938 1.0041 0.34898-0.45558 0.80551 1.6471z" fill="#393939"/>
+  </symbol>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <use transform="translate(4.5962 4.0465)" width="100%" height="100%" xlink:href="#g2392"/>
+ <use transform="translate(3.2646 .88108)" width="100%" height="100%" xlink:href="#g2392"/>
+ <use transform="matrix(.67225 0 0 .59126 17.141 108.65)" width="100%" height="100%" stroke-width="1.5862" xlink:href="#g2392"/>
+ <use transform="translate(-1.5142 -15.258)" width="100%" height="100%" xlink:href="#g2392"/>
+ <use transform="matrix(.69934 0 0 .92438 20.813 -.70485)" width="100%" height="100%" stroke-width="1.2437" xlink:href="#g2392"/>
+ <use transform="translate(148.18 -224.01)" width="100%" height="100%" xlink:href="#g2392"/>
+ <use transform="matrix(.72736 0 0 .82431 161.45 -178.15)" width="100%" height="100%" stroke-width="1.2915" xlink:href="#g2392"/>
+ <use transform="translate(155.21 -229.27)" width="100%" height="100%" xlink:href="#g2392"/>
+ <g stroke-width="1.0722">
+  <use transform="matrix(1.1755 0 0 .73994 212.6 -108.85)" width="100%" height="100%" xlink:href="#g2392"/>
+  <use transform="matrix(1.1755 0 0 .73994 209.42 -106.85)" width="100%" height="100%" xlink:href="#g2392"/>
+  <use transform="matrix(1.1755 0 0 .73994 212.65 -104.39)" width="100%" height="100%" xlink:href="#g2392"/>
+ </g>
+ <use transform="matrix(1.4452 0 0 .96594 200.45 -160.98)" width="100%" height="100%" stroke-width=".84637" xlink:href="#g2392"/>
+ <use transform="matrix(1.087 0 0 .91034 201.27 -163.69)" width="100%" height="100%" stroke-width="1.0053" xlink:href="#g2392"/>
+</svg>

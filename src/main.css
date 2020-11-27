@@ -249,6 +249,11 @@ img.sidebar-logo {
   margin-left: 40px;
   margin-bottom: 12px;
 }
+image.terrain {
+  pointer-events: none;
+  x: 0 !important;
+  y: 0 !important;
+}
 /* Spinner */
 .spinner {
   width: 40px;

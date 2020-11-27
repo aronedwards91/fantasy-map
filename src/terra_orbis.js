@@ -1102,6 +1102,15 @@ $(function () {
 
     // Add some plots on the map
     plots: {
+      terrain: {
+        value: 1,
+        size: 0,
+        type: "image",
+        cssClass: "terrain",
+        url: "/public/terrain.svg",
+        width: 282,
+        height: 296,
+      },
       // Groups
       fierfolc: {
         x: 150,
