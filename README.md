@@ -1,6 +1,5 @@
 ## To Do
 
-- cities; ghast, elodhiir
 - terrain map
 - entries for all districts
 - Add cities

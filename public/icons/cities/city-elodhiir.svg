@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64.755mm" height="76.497mm" version="1.1" viewBox="0 0 64.755 76.497" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(-61.122 -68.037)">
+  <g stroke="#000" stroke-linecap="round">
+   <rect x="61.622" y="113.03" width="60.455" height="11.153" fill="#2f4561" fill-opacity=".62028"/>
+   <circle cx="73.522" cy="107.1" r="3.8653" fill="none"/>
+   <circle cx="97.794" cy="107.1" r="3.8653" fill="none"/>
+  </g>
+  <g fill="#8f7548" stroke="#000" stroke-linecap="round">
+   <path d="m63.559 143.99-4.89e-4 -19.662s2.7718 0.0684 9.9141-17.172c7.4431 17.297 9.9974 17.316 9.9974 17.316h4.059s3.1097 0.0688 10.23-17.719c6.9514 17.691 10.089 17.474 10.089 17.474v19.809z"/>
+   <rect x="107.85" y="109.49" width="10.721" height="34.548"/>
+   <rect x="103.7" y="93.218" width="19.196" height="12.554"/>
+  </g>
+  <path d="m107.85 109.49-4.1499-3.7138h19.196l-4.325 3.7138z" fill="#674f25" stroke="#000" stroke-linejoin="bevel"/>
+  <path d="m125.79 93.309h-25.359s3.2799-0.04867 13.111-23.927c9.338 23.983 12.248 23.927 12.248 23.927z" fill="#2f4561" fill-opacity=".62028" stroke="#000" stroke-linecap="round"/>
+  <g fill="#99a6a7" stroke="#000" stroke-linecap="round">
+   <g stroke-linejoin="bevel">
+    <rect x="106.69" y="93.329" width="12.557" height="9.2213"/>
+    <rect x="67.499" y="129.08" width="4.2392" height="11.975"/>
+    <rect x="75.368" y="129.08" width="4.2392" height="11.975"/>
+    <rect x="83.72" y="129.08" width="4.2392" height="11.975"/>
+   </g>
+   <g>
+    <rect transform="matrix(.50072 .86561 -.50072 .86561 0 0)" x="139.14" y="-7.8146" width="6.6845" height="6.6845" stroke-width="1.074"/>
+    <path d="m96.605 124.42v-10.428c-1.5793 6.973-5.3859 10.492-5.3859 10.492z"/>
+    <path d="m98.824 124.33v-10.428c1.5792 6.973 5.3859 10.492 5.3859 10.492z"/>
+   </g>
+  </g>
+  <path d="m92.207 143.98v-12.57l5.7928-4.2813 5.8867 4.2813v12.45z" fill="#685434" stroke="#000"/>
+  <rect x="95.977" y="137.42" width="3.9895" height="6.1967"/>
+ </g>
+</svg>

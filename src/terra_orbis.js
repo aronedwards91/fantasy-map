@@ -530,7 +530,7 @@ $(function () {
       opacity: 1,
     },
   };
-  function City(name, info, url, x, y, width = 6) {
+  function City(name, info, url, x, y, width = 6, type = "City") {
     this.plotData = {
       x,
       y,
@@ -547,12 +547,14 @@ $(function () {
         click: (e) => getEntry(name.replace(" ", "-"), "city", e),
       },
       tooltip: {
-        content: `<b>${name}</b><span>(City)</span><div>${info}</div>`,
+        content: `<b>${name}</b><span>(${type})</span><div>${info}</div>`,
       },
     };
   }
   var DormumUrl = "public/icons/cities/city-dormum.svg";
   var NelomicaCityUrl = "public/icons/cities/city-nelomica.svg";
+  var ElodhiirCityUrl = "public/icons/cities/city-elodhiir.svg";
+
   const cityData = {
     // Dormum
     Karantium: new City(
@@ -570,6 +572,15 @@ $(function () {
       169,
       106,
       9
+    ),
+    Greyhold: new City(
+      "Greyhold",
+      "A large estate spanning huge fertile ashlands",
+      ElodhiirCityUrl,
+      123,
+      138,
+      5,
+      "Estates"
     ),
   };
 
@@ -1204,6 +1215,10 @@ $(function () {
       },
       tapauChik: {
         ...cityData.TapauChik.plotData,
+      },
+      // city-Elodhiir
+      greyhold: {
+        ...cityData.Greyhold.plotData,
       },
     },
   });
