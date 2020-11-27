@@ -3,8 +3,8 @@
     "subtitle": "The Palace of Deptin",
     "logo": "public/icons/cities/city-dormum.svg",
     "breadcrumb": {
-      "Fierfolc": "groups/dormum",
-      "Gamn Dow": "district/Modicium"
+      "Dormum": "groups/dormum",
+      "Modicium": "district/Modicium"
     },
     "topics": {
       "history": ["h4", "Construction", "p", "The northen islands of ...."],

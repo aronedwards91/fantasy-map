@@ -552,6 +552,7 @@ $(function () {
     };
   }
   var DormumUrl = "public/icons/cities/city-dormum.svg";
+  var NelomicaCityUrl = "public/icons/cities/city-nelomica.svg";
   const cityData = {
     // Dormum
     Karantium: new City(
@@ -560,6 +561,15 @@ $(function () {
       DormumUrl,
       58,
       122
+    ),
+    // Nelomica
+    TapauChik: new City(
+      "Tapau Chik",
+      "Rising over the wetlands like a floating watcher, the trading hub offers a safe haven in dangerous waters",
+      NelomicaCityUrl,
+      169,
+      106,
+      9
     ),
   };
 
@@ -1180,7 +1190,7 @@ $(function () {
         y: 204,
         ...placePlotDefault,
         width: 10,
-        url: "/public/icons/cities/fierfolc-fort.svg",
+        url: "/public/icons/forts/fierfolc-fort.svg",
         tooltip: {
           content: "Fierfolc:<b> Castle Redwater</b>",
         },
@@ -1191,6 +1201,9 @@ $(function () {
       // cities
       karantium: {
         ...cityData.Karantium.plotData,
+      },
+      tapauChik: {
+        ...cityData.TapauChik.plotData,
       },
     },
   });

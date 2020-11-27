@@ -1,6 +1,8 @@
 ## To Do
 
-- cities; dormum, ghast, elodhiir
+- cities; ghast, elodhiir
+- terrain map
+- entries for all districts
 - Add cities
 - city tooltips
 - expand out entries

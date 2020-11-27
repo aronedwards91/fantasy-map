@@ -1,0 +1,18 @@
+{
+  "title": "Tapau Chik",
+  "subtitle": "The city over a river",
+  "logo": "public/icons/cities/city-nelomica.svg",
+  "breadcrumb": {
+    "Nelomica": "groups/nelomica",
+    "Ochuacan": "district/Ochuacan"
+  },
+  "topics": {
+    "history": ["h4", "Construction", "p", "Over the great river Propatek"],
+    "Places of Note": [
+      "h4",
+      "Temple of the Deep",
+      "p",
+      "On of the few underwater temples of the nelomica, using the dark natural glass, a bright day can reveal to those within the wandering so the river beasts."
+    ]
+  }
+}
