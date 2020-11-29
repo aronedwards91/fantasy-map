@@ -85,6 +85,12 @@ h1 {
 [data-type="area"] {
   stroke-width: 0.3;
 }
+image.terrain {
+  pointer-events: none;
+  x: 0 !important;
+  y: 0 !important;
+}
+#maproot.hideforts image.terrain,
 #maproot.hideforts image.fort {
   display: none;
 }
@@ -248,11 +254,6 @@ img.sidebar-logo {
   max-height: 220px;
   margin-left: 40px;
   margin-bottom: 12px;
-}
-image.terrain {
-  pointer-events: none;
-  x: 0 !important;
-  y: 0 !important;
 }
 /* Spinner */
 .spinner {

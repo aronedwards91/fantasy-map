@@ -1,6 +1,7 @@
 ## To Do
 
 - terrain map
+- favicon
 - entries for all districts
 - Add cities
 - city tooltips
