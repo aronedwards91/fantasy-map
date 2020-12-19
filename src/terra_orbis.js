@@ -140,8 +140,8 @@ $(function () {
   const factionData = {
     fierfolc: {
       name: "Fierfolc",
-      color: "#58A540",
-      colorHover: "#429229",
+      color: "#9fcc6c",
+      colorHover: "#7cc444",
     },
     dormum: {
       name: "Dormum",
@@ -155,13 +155,13 @@ $(function () {
     },
     morajiin: {
       name: "Morajiin",
-      color: "#7A66BB",
-      colorHover: "#634DA9",
+      color: "#a496d1",
+      colorHover: "#8072ad",
     },
     ridokin: {
       name: "Ridokin",
-      color: "#C35BB6",
-      colorHover: "#AC399E",
+      color: "#d196ca",
+      colorHover: "#c675bd",
     },
     dwarves: {
       name: "Dwarves",
@@ -170,18 +170,18 @@ $(function () {
     },
     kairn: {
       name: "Kairn",
-      color: "#7C74C2",
-      colorHover: "#5950A8",
+      color: "#aac0dd",
+      colorHover: "#7b9fd1",
     },
     orkkin: {
       name: "Orkkin",
-      color: "#BC3E3E",
-      colorHover: "#9C1616",
+      color: "#f47469",
+      colorHover: "#f23737",
     },
     naga: {
       name: "Naga",
-      color: "#F18B2F",
-      colorHover: "#CE6801",
+      color: "#ea9a54",
+      colorHover: "#e07a14",
     },
   };
   const ridokinColors = {
