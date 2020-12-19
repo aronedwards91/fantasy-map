@@ -1,7 +1,7 @@
 ## To Do
 
-- try more saturated map colours
-- layout redo
+- firefox position fix
+- position controls
 - terrain map
 - favicon
 - entries for all districts

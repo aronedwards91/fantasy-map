@@ -4,10 +4,12 @@
   --mid: #52702b;
   --dark: #3b5716;
   --darker: #223805;
+  --font-dark: #2d2d2d;
 }
+/* Overlay V2 */
 html {
   margin: 0;
-  background: #b3c166;
+  background: #6597d1;
   color: var(--lighter);
 }
 body {
@@ -16,19 +18,46 @@ body {
   min-height: 100vh;
   width: 100%;
   margin: 0;
-  background: url("/public/brass-bg-lg.png");
+  position: relative;
+  overflow: hidden;
+  /* background: url("/public/brass-bg-lg.png"); replace - waves */
 }
 h1 {
   font-size: 30px;
   margin: auto;
   margin-top: 10px;
 }
+.map-signage-front {
+  position: absolute;
+  z-index: 300;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--font-dark);
+  pointer-events: none;
+}
+.centre-title {
+  align-self: start;
+  margin: 0 auto;
+  padding: 5px 40px;
+  border: 1px solid black;
+  background: url("/public/parchment-bg.png");
+  background-color: rgb(138, 116, 75);
+}
+.map-info-mid {
+  position: absolute;
+  z-index: 200;
+  width: 50%;
+  right: 0;
+  display: flex;
+}
+/* End - Overlay V2 */
 
 .container {
   max-width: 800px;
   margin: auto;
 }
-
 .map-flex {
   display: flex;
   margin: 0 auto;
@@ -51,13 +80,9 @@ h1 {
   color: black;
 }
 .map-section {
-  flex: 2 1 800px;
-  border: 1px solid var(--mid);
-  background: var(--dark);
-  max-width: 90vh;
-  padding: 12px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 }
 .map-info {
@@ -69,18 +94,20 @@ h1 {
   background: var(--lighter);
 }
 /* Specific mapael css class are below
-     * 'mapael' class is added by plugin
-    */
+* 'mapael' class is added by plugin
+*/
 
 .mapael .map {
   position: relative;
   cursor: pointer;
-  background: #9ab4c0;
+}
+.mapael .map > svg {
+  height: 100vh;
 }
 .mapcontainer {
-  flex: 0 1 92%;
+  flex: 0 1 100%;
   max-height: 90vh;
-  border: 1px solid var(--mid);
+  position: relative;
 }
 [data-type="area"] {
   stroke-width: 0.3;
@@ -173,18 +200,18 @@ image.terrain {
 }
 /* sidebar */
 .info-wrap {
-  background: rgba(120, 120, 120, 0.5);
-  flex: 1 1 600px;
-  padding: 10px 30px;
+  width: 100%;
+  background: url("/public/parchment-bg.png");
+  padding: 60px 30px 10px;
   color: black;
   border: 10px var(--mid) double;
+  margin-right: 120px;
 }
 .info-scroll {
   overflow-y: scroll;
-  min-height: 84vh;
-  max-height: 84vh;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  height: calc(100vh - 180px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .info-scroll::-webkit-scrollbar {
   display: none;
