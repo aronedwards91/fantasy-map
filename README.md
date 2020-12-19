@@ -1,5 +1,7 @@
 ## To Do
 
+- rivers
+- layout redo
 - terrain map
 - favicon
 - entries for all districts

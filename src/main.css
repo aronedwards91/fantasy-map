@@ -85,11 +85,15 @@ h1 {
 [data-type="area"] {
   stroke-width: 0.3;
 }
+image.terrainlines,
 image.terrain {
   pointer-events: none;
-  x: 0 !important;
-  y: 0 !important;
 }
+image.terrain {
+  x: 5 !important;
+  y: 11 !important;
+}
+#maproot.hideforts image.terrainlines,
 #maproot.hideforts image.terrain,
 #maproot.hideforts image.fort {
   display: none;

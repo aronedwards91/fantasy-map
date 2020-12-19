@@ -1102,14 +1102,23 @@ $(function () {
 
     // Add some plots on the map
     plots: {
+      svgTerrain: {
+        value: 1,
+        size: 0,
+        type: "image",
+        cssClass: "terrainlines",
+        url: "/public/terrain-rivers.svg",
+        width: 282,
+        height: 296,
+      },
       terrain: {
         value: 1,
         size: 0,
         type: "image",
         cssClass: "terrain",
-        url: "/public/terrain.svg",
-        width: 282,
-        height: 296,
+        url: "/public/terrain.png",
+        width: 263,
+        height: 277,
       },
       // Groups
       fierfolc: {
@@ -1254,7 +1263,7 @@ $(function () {
   };
   const zoomOptShowBig = {
     animDuration: 300,
-    hiddenOpacity: 0.1,
+    hiddenOpacity: 0,
     ranges: {
       plot: {
         min: 0,
