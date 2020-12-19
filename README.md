@@ -1,6 +1,6 @@
 ## To Do
 
-- rivers
+- try more saturated map colours
 - layout redo
 - terrain map
 - favicon

@@ -397,7 +397,7 @@ $(function () {
     AraeTocco: new District(
       "Arae Tocco",
       dormumColors,
-      "A mix of dry desert and rich rivers, many old temples and forts"
+      "A mix of dry desert and rich oasis, many old temples and forts"
     ),
     AquaeRigo: new District(
       "Aquae Rigo",
