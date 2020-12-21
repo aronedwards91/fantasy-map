@@ -117,10 +117,6 @@ image.terrainlines,
 image.terrain {
   pointer-events: none;
 }
-image.terrain {
-  x: 5 !important;
-  y: 11 !important;
-}
 #maproot.hideforts image.terrainlines,
 #maproot.hideforts image.terrain,
 #maproot.hideforts image.fort {

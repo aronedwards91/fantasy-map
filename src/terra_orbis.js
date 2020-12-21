@@ -1277,12 +1277,22 @@ $(function () {
 
   $(".mapcontainer").trigger("showElementsInRange", [zoomOptHideBig]);
 
+  var terrainXCord = 5;
+  var terrainYCord = 11;
+  var reqApplyXYCordsToTerrain = true;
   $(".map").on("afterZoom", function () {
     const zoomLevel = jQuery(".mapcontainer").data("mapael").zoomData.zoomLevel;
     if (zoomLevel < 1) {
       $(".mapcontainer").trigger("showElementsInRange", [zoomOptHideBig]);
     } else {
       $(".mapcontainer").trigger("showElementsInRange", [zoomOptShowBig]);
+    }
+
+    if (reqApplyXYCordsToTerrain) {
+      var terrainImg = $("image.terrain")[0];
+      terrainImg.setAttribute("x", terrainXCord);
+      terrainImg.setAttribute("y", terrainYCord);
+      reqApplyXYCordsToTerrain = false;
     }
   });
 });

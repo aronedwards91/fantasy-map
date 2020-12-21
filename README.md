@@ -1,8 +1,8 @@
 ## To Do
 
-- firefox position fix
-- position controls
-- terrain map
+- terrain map, update rivers masterfile
+- terrain map, few more mountains where empty
+- position controls / ui instructions
 - favicon
 - entries for all districts
 - Add cities
