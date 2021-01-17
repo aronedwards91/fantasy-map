@@ -325,7 +325,7 @@ $(function () {
     Getrebly: new District(
       "Getrebly",
       fierfolcColors,
-      "The Home fort, winding rivers & rich valleys paint the beautiful Fierfloc Capital"
+      "The Home fort, winding rivers & rich valleys paint the beautiful Fierfolc Capital"
     ),
     Faelaports: new District(
       "Faelaports",
