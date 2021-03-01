@@ -1,7 +1,6 @@
 ## To Do
 
-- terrain map, update rivers masterfile
-- terrain map, few more mountains where empty
+- terrain map
 - position controls / ui instructions
 - favicon
 - entries for all districts

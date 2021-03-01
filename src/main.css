@@ -13,6 +13,7 @@ html {
   color: var(--lighter);
 }
 body {
+  /* background-image: url("/public/sea.png"); */
   color: #5d5d5d;
   font-family: "IM Fell English", Helvetica, Arial, sans-serif;
   min-height: 100vh;
@@ -207,7 +208,7 @@ image.terrain {
 }
 .info-scroll {
   overflow-y: scroll;
-  height: 100vh;
+  height: calc(100vh - 100px);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
