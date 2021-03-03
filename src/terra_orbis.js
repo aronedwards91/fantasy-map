@@ -1116,7 +1116,7 @@ $(function () {
         size: 0,
         type: "image",
         cssClass: "terrain",
-        url: "/public/terrain.png",
+        url: "/public/terrain.webp",
         width: 263,
         height: 277,
       },
