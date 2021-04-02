@@ -1117,8 +1117,10 @@ $(function () {
         type: "image",
         cssClass: "terrain",
         url: "/public/terrain.webp",
-        width: 263,
-        height: 277,
+        x: 6,
+        y: 13,
+        width: 260,
+        height: 272,
       },
       // Groups
       fierfolc: {
