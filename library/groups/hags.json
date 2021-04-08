@@ -2,7 +2,26 @@
   "title": "Hags",
   "subtitle": "Accursed denizens of the foulest swamps",
   "logo": "public/icons/hag-banner.svg",
+  "stats": {
+    "custom": {
+      "Population": "Rare",
+      "Wealth": "Strange, incalculable",
+      "Domicle": "Withering Nests"
+    }
+  },
   "topics": {
+    "Peoples": [
+      "h3",
+      "Power",
+      "p",
+      "Vengful and full to their core of spite and hatred, their are greatly feared for their mastery of curses, hexes and the foulest of the magics of vengence."
+    ],
+    "Geography": [
+      "h3",
+      "Home Terrain",
+      "p",
+      "Isolated and disagreeable they hold court of the great swamplands, hiding away in the deepest crevices, few choose to risk open contact with the other races."
+    ],
     "Military": ["h4", "Armies", "p", " ...."]
   }
 }

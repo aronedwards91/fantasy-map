@@ -2,7 +2,26 @@
     "title": "Orkkin",
     "subtitle": "Ferocious plains nomads",
     "logo": "public/icons/orkkin-banner.svg",
+    "stats": {
+      "custom": {
+        "Population": "Plentiful, and easily renewed",
+        "Wealth": "lacking",
+        "Domicle": "Camps"
+      }
+    },
     "topics": {
+      "Peoples": [
+        "h3",
+        "Power",
+        "p",
+        "The Orkkin draw upon their inner smoking hearts, granting them power of against light, mist, storms and smoking tendrils of darkness itself all lie wihin the hands of their twilight chants."
+      ],
+      "Geography": [
+        "h3",
+        "Home Terrain",
+        "p",
+        "The mist coated steppes, they appear and disappear as though they where everywhere at once."
+      ],
       "Military": ["h4", "Armies", "p", " ...."],
       "Biology": ["h4", "Growth","p","The Orkkin grow slow but plentifully, a litter being of around 6-12, for the first twentysome years they are brash, violent and eager to shed blood, and their society often seperates the youth, their main battle front, and the aged the main cultural and calmer side of the Orkkin."]
     }

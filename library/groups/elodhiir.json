@@ -2,7 +2,26 @@
   "title": "Elodhiir",
   "subtitle": "The immortal body capturing men of the ashlands",
   "logo": "public/icons/elodhiir-banner.svg",
+  "stats": {
+    "custom": {
+      "Population": "Small, though hold many thralls",
+      "Wealth": "Plentiful",
+      "Domicle": "Great Estates"
+    }
+  },
   "topics": {
-    "Military": ["h4", "Armies", "p", " ...."]
+    "Peoples": [
+      "h3",
+      "Power",
+      "p",
+      "The Elodhiir hold within them the great pwer of Trancendessance, the power to leek parts of their conciousness into unclaimed vessels, with training this can go even beyond humanoids, and ancestors, even to the very beasts of the land."
+    ],
+    "Geography": [
+      "h3",
+      "Home Terrain",
+      "p",
+      "Due to their fear of fire, they are most at home in lands of ash, devoid of burnable organic material."
+    ],
+    "Military": ["h3", "Armies", "p", " ...."]
   }
 }

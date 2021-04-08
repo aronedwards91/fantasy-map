@@ -217,6 +217,17 @@ image.terrain {
 }
 #info-sidebar {
   opacity: 0.7;
+  font-weight: bold;
+}
+.stats-section > div {
+  display: flex;
+}
+.stats-section > div > div:first-child {
+  flex-basis: 40%;
+  margin-right: 10px;
+}
+.stats-section > div > div:last-child {
+  flex-basis: 60%;
 }
 .bar-bg {
   height: 4px;

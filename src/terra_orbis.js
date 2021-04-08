@@ -630,9 +630,20 @@ $(function () {
           });
         }
         breadcrumb += "</p>";
+
+        const customStats = data.stats.custom;
+        const statsHTML = '<div class="stats-section">' + 
+        Object.keys(customStats).map((key) => {
+          return `<div>
+          <div>${key}</div>
+          <div>${customStats[key]}</div>
+          </div>`
+        }).join("")
+        + '</div>';
+
         let innerHTML = `${breadcrumb}<div class="flex-between"><div><h2>${
           data.title
-        }</h2><p>${data.subtitle}</p></div>${
+        }</h2><p>${data.subtitle}</p>${statsHTML}</div>${
           data.logo
             ? "<img class='sidebar-logo' src='" + data.logo + "' />"
             : ""

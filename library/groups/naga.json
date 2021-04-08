@@ -2,7 +2,26 @@
   "title": "Naga",
   "subtitle": "Snakebodied fire worshippers",
   "logo": "public/icons/naga-banner.svg",
+  "stats": {
+    "custom": {
+      "Population": "Large but contained",
+      "Wealth": "Sufficient",
+      "Domicle": "Temple Complexes"
+    }
+  },
   "topics": {
+    "Peoples": [
+      "h3",
+      "Power",
+      "p",
+      "The naga hold sway of heat and fire, making it dance for whms of their spiritual needs, loath but willing to use it violence, they are calm but dangerous."
+    ],
+    "Geography": [
+      "h3",
+      "Home Terrain",
+      "p",
+      "Only the deserts of the world can trult satisfy their need for warmth, venturing out rarely and only for the direst of curiosity, and the spreading of their holy word."
+    ],
     "Military": ["h4", "Armies", "p", " ...."]
   }
 }

@@ -2,7 +2,24 @@
   "title": "ghasts",
   "subtitle": "The ghostly attendants of pain & death",
   "logo": "public/icons/forts/fort-ghast.svg",
+  "stats": {
+    "custom": {
+      "Population": "variable",
+      "Wealth": "unknown",
+      "Domicle": "Gatherings"
+    }
+  },
   "topics": {
+    "Peoples": [
+      "h3",
+      "Power",
+      "p",
+      "Feeders upon anguish and sorrow they spawn upon old battlefields and dwell in places haunted by brutality and savagery. There intimate connection with death gives them power over sound itself, they can drive the sound from a whole town, inflicting fear and madness upon a population, and if required sap the very motivation itself from unsteeled souls.",
+      "h3",
+      "Culture",
+      "p",
+      "Though greatly feared, and on occasion revered, they do not tend themselves to initations of conflict, though they do on occasion press other into it, if only to satisfy their morbid curiosities."
+    ],
     "Military": ["h4", "Armies", "p", " ...."]
   }
 }
