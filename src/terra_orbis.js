@@ -616,12 +616,14 @@ $(function () {
     spinner.classList.add("spinner");
     SidebarEl.appendChild(spinner);
 
+    var BREAD =
+    "<p class='breadcrumb'><a onclick='window.utilities.sidebarHome();'>Home</a>";
+
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         const NewEntryElement = document.createElement("div");
-        let breadcrumb =
-          "<p class='breadcrumb'><a onclick='window.utilities.sidebarHome();'>Home</a>";
+        let breadcrumb = BREAD;
         if (data.breadcrumb) {
           Object.keys(data.breadcrumb).forEach((key) => {
             breadcrumb += `<span>&gt;</span><a onclick="window.utilities.getEntryByLink('${data.breadcrumb[key]}', event)">${key}</a>`;
@@ -661,8 +663,11 @@ $(function () {
       .catch((err) => {
         console.error("err", err);
         removeAllChildNodes(SidebarEl);
+        const breadcrumbTop = document.createElement("div");
+        breadcrumbTop.innerHTML = BREAD;
         const NoResult = document.createElement("h4");
         NoResult.innerHTML = "The Codex remains silent on this matter..";
+        SidebarEl.appendChild(breadcrumbTop);
         SidebarEl.appendChild(NoResult);
       });
   }
@@ -1117,8 +1122,6 @@ $(function () {
         type: "image",
         cssClass: "terrain",
         url: "/public/terrain.webp",
-        x: 6,
-        y: 13,
         width: 260,
         height: 272,
       },
@@ -1279,8 +1282,8 @@ $(function () {
 
   $(".mapcontainer").trigger("showElementsInRange", [zoomOptHideBig]);
 
-  var terrainXCord = 5;
-  var terrainYCord = 11;
+  var terrainXCord = '6.4px';
+  var terrainYCord = 13.6;
   var reqApplyXYCordsToTerrain = true;
   $(".map").on("afterZoom", function () {
     const zoomLevel = jQuery(".mapcontainer").data("mapael").zoomData.zoomLevel;

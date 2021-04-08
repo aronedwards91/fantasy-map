@@ -215,6 +215,9 @@ image.terrain {
 .info-scroll::-webkit-scrollbar {
   display: none;
 }
+#info-sidebar {
+  opacity: 0.7;
+}
 .bar-bg {
   height: 4px;
   background: var(--dark);
@@ -272,8 +275,9 @@ image.terrain {
   margin-right: 4px;
 }
 .breadcrumb a {
+  font-weight: bold;
   cursor: pointer;
-  color: #2f3d3a;
+  color: #3c3c3c;
   transition: color 0.3s ease-in-out;
 }
 .breadcrumb a:hover {
